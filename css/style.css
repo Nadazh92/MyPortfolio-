@@ -1,1 +1,96 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #FBF7F4;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+}
+
+.home-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.home-container .part-one {
+  background-color: #780710;
+  width: 35%;
+  height: 100vh;
+}
+.home-container .part-two {
+  width: 65%;
+  height: 100vh;
+}
+.home-container .part-two .namerolle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8rem;
+}
+.home-container .part-two .namerolle h1 {
+  font-size: 48px;
+}
+.home-container .part-two .namerolle p {
+  font-size: 22px;
+  color: #780710;
+  margin-top: 0;
+}
+.home-container .part-two .cta-home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  gap: 1rem;
+}
+.home-container .part-two .cta-home-container a {
+  border: solid 1px #780710;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px 50px;
+  text-decoration: none;
+  color: #000000;
+  background-color: #FBF7F4;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+}
+.home-container .part-two .cta-home-container #seemywork:hover {
+  border: solid 2px #780710;
+}
+.home-container .part-two .cta-home-container #seemywork:hover .fa-arrow-right-long {
+  color: #780710;
+  animation-name: arrow;
+  animation-duration: 2s;
+  animation-iteration-count: 2s;
+  animation-duration: normal;
+  animation-timing-function: ease-in-out;
+}
+@keyframes arrow {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(20px);
+  }
+}
+.home-container .part-two .sm-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+.home-container .part-two .sm-container .fa-square-linkedin, .home-container .part-two .sm-container .fa-github {
+  color: #000000;
+  font-size: 40px;
+}
+
+img {
+  position: absolute;
+  left: 25rem;
+  border: none;
+  border-radius: 50%;
+}/*# sourceMappingURL=style.css.map */

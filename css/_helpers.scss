@@ -1,0 +1,39 @@
+// Variables 
+$bg-color: #FBF7F4;
+$txt-color: #000000;
+$accent-color: #780710;
+$line-color:#B3AEAE;
+$font-fam: "Noto Sans", sans-serif;
+
+
+@mixin flex($justify:center, $align:center){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin btn($pad: 10px 20px){
+    border: solid 1px $accent-color;
+    border-radius: 20px;
+    text-align: center;
+    padding: $pad;
+    text-decoration: none;
+    color:$txt-color;
+    background-color: $bg-color;
+    font-family:$font-fam ;
+    font-weight: 400;
+
+    // &:hover{
+    //     background-color: $hover;
+      
+    // }
+
+}
+
+@mixin para($color:$txt-color, $size:25px, $hline:1.2){
+    color:$color;
+    font-size: $size;
+    line-height: $hline;
+}
+
+
