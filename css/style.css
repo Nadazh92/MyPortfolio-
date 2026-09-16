@@ -28,6 +28,22 @@ body {
 }
 .home-container .main-content .namerolle h1 {
   font-size: 48px;
+  animation-name: myname;
+  animation-duration: 4s;
+  animation-iteration-count: 2;
+  animation-duration: normal;
+  animation-timing-function: ease-in-out;
+}
+@keyframes myname {
+  0% {
+    scale: 0;
+  }
+  50% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.5;
+  }
 }
 .home-container .main-content .namerolle p {
   font-size: 22px;
@@ -53,10 +69,12 @@ body {
   font-family: "Noto Sans", sans-serif;
   font-weight: 400;
 }
-.cta-home-container #seemywork:hover {
+.cta-home-container .seemywork:hover {
   border: solid 2px #780710;
+  font-weight: 600;
+  transition: 0.3s ease-in;
 }
-.cta-home-container #seemywork:hover .fa-arrow-right-long {
+.cta-home-container .seemywork:hover .fa-arrow-right-long {
   color: #780710;
   animation-name: arrow;
   animation-duration: 1s;
@@ -72,16 +90,27 @@ body {
     transform: translateX(20px);
   }
 }
+.cta-home-container .downloadcv:hover {
+  border: solid 2px #780710;
+  font-weight: 600;
+  transition: 0.3s ease-in;
+}
 
 .sm-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
+  gap: 5px;
 }
 .sm-container .fa-square-linkedin, .sm-container .fa-github {
   color: #000000;
   font-size: 25px;
+}
+.sm-container .fa-square-linkedin:hover, .sm-container .fa-github:hover {
+  color: #780710;
+  font-size: 33px;
+  transition: 1s ease-in;
 }
 
 .nav-container {
@@ -112,6 +141,8 @@ body {
 }
 .nav-container ul li a:hover {
   color: black;
+  font-size: 27px;
+  transition: 0.3s ease-in-out;
 }
 .nav-container button {
   border: none;
@@ -140,6 +171,11 @@ body {
   width: 20vw;
   align-self: center;
   padding-bottom: 2rem;
+}
+.about-sec span {
+  font-size: 30px;
+  color: #780710;
+  font-family: fantasy;
 }
 .about-sec p {
   font-size: 18px;
@@ -174,6 +210,8 @@ footer ul li a {
 }
 footer ul li a:hover {
   color: black;
+  font-size: 27px;
+  transition: 0.3s ease-in-out;
 }
 footer .fa-square-linkedin, footer .fa-github {
   color: #FBF7F4;

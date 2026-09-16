@@ -28,12 +28,37 @@ body{
 
          h1{
          font-size: 48px;
-    }
+         animation-name: myname;
+         animation-duration: 4s;
+         animation-iteration-count: 2;
+         animation-duration: normal;
+         animation-timing-function: ease-in-out;
+
+         @keyframes myname{
+            0%{
+                scale:0;
+                
+            }
+           
+              50%{
+                scale:1;
+                
+              }
+
+              100%{
+                scale:1.5;
+             
+              }
+                    
+         }
+         }
 
        p{
         font-size:22px;
         color: helpers.$accent-color;
         margin-top: 0;
+
+
 
         }
 
@@ -48,8 +73,10 @@ body{
          }
 
 
-            #seemywork:hover{
+            .seemywork:hover{
                 border: solid 2px helpers.$accent-color;
+                font-weight: 600;
+                transition: 0.3s ease-in;
                 .fa-arrow-right-long{
                     color:helpers.$accent-color;
                     animation-name: arrow;
@@ -70,16 +97,34 @@ body{
 
                 }
             }
+
+
+
+            .downloadcv:hover{
+                border: solid 2px helpers.$accent-color;
+                font-weight: 600;
+                transition: 0.3s ease-in;
+               
+
+            }
+
          }
 
          
      .sm-container{
         @include helpers.flex($justify:center);
         margin-top: 5rem;
+        gap:5px;
 
         .fa-square-linkedin , .fa-github {
             color:helpers.$txt-color;
             font-size: 25px;
+
+             &:hover{
+                color:helpers.$accent-color;
+                font-size: 33px;
+                transition: 1s ease-in;
+            }
         }
     }
 
@@ -90,13 +135,14 @@ body{
         gap: 25rem;
         margin-top: 2rem;
 
-
-        img{
+    
+             img{
             height:70px;
             width:70px;
             margin-left: 2rem;
-          
-        }
+            }
+
+        
 
         ul {
            @include helpers.flex($justify:flex-start); 
@@ -112,6 +158,8 @@ body{
 
                 &:hover {
                     color:black;
+                    font-size: 27px;
+                    transition: 0.3s ease-in-out;
                 }
                 }
             
@@ -146,12 +194,18 @@ body{
            align-self: flex-start;
        }
 
+
         img{
             height:50vh;
             width: 20vw;
             align-self: center;
             padding-bottom: 2rem;
              
+        }
+        span{
+            font-size: 30px;
+            color:helpers.$accent-color;
+            font-family: fantasy;
         }
 
         p{
@@ -190,7 +244,10 @@ footer{
                font-weight: 700;
 
                &:hover{
+                
                 color:black;
+                font-size: 27px;
+                transition: 0.3s ease-in-out;
                }
             }
 
@@ -202,6 +259,8 @@ footer{
         .fa-square-linkedin, .fa-github{
             color:helpers.$bg-color;
             font-size: 30px;
+
+           
         }
 
     }

@@ -18,7 +18,10 @@ class Page{
 
           <header>
             <nav class="nav-container">
-            <img src="img/mypic.png" alt="mypicture">
+        
+           
+             <a href="#"><img src="img/mypic.png" alt="mypicture"></a>
+            
             <ul>
                <li><a href="#" class="homePage">Home</a></li>
                <li><a href="#" id="aboutPage">About</a></li>
@@ -94,8 +97,8 @@ class About extends Page{
     <section class="about-sec">
     <h1>${this.title}</h1>
     <img src=${this.img} alt="my picture">
-    <p>${this.para1}</p>
-    <p>${this.para2}</p>
+    <span> Hey Iam Nada </span>
+    <p>${this.para1} <br> ${this.para2}</p>
     </section>
         
         ` 
@@ -127,8 +130,8 @@ class Home extends Page {
             
 
             <div class="cta-home-container" >
-                <a href="#" id="seemywork">${this.fCta} <i class="fa-solid fa-arrow-right-long"></i></a>
-                <a href="#">${this.sCta}</a>
+                <a href="#" class="seemywork">${this.fCta} <i class="fa-solid fa-arrow-right-long"></i></a>
+                <a href="#" class="downloadcv">${this.sCta}</a>
             </div>
 
             <div class="sm-container">
