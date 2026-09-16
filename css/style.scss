@@ -5,33 +5,19 @@ body{
     margin: 0;
     padding: 0;
     background-color: helpers.$bg-color;
-    overflow:hidden;
-    
-    
-}
-  
-
-
-
-h1,h2,h3,h4,h5,h6{
     font-family: helpers.$font-fam;
-    font-weight: 700;
+   
+    
+    
 }
-
-
-
-.home-container{
-     @include helpers.flex($justify:flex-start);
-
-
-    .part-one{
-    background-color: helpers.$accent-color;
-    width:35%;
-    height:100vh;  
   
+.home-page {
+    overflow: hidden;
 }
+ .home-container{
+    @include helpers.flex($align:center);
 
-   .part-two{
+   .main-content{
     width:65%;
     height:100vh;
     
@@ -42,8 +28,6 @@ h1,h2,h3,h4,h5,h6{
 
          h1{
          font-size: 48px;
-         
-
     }
 
        p{
@@ -53,7 +37,7 @@ h1,h2,h3,h4,h5,h6{
 
         }
 
-    }
+    }}}
 
     .cta-home-container { 
          @include helpers.flex($justify:center);
@@ -69,8 +53,8 @@ h1,h2,h3,h4,h5,h6{
                 .fa-arrow-right-long{
                     color:helpers.$accent-color;
                     animation-name: arrow;
-                    animation-duration: 2s;
-                    animation-iteration-count: 2s;
+                    animation-duration: 1s;
+                    animation-iteration-count: 1s;
                     animation-duration: normal;
                     animation-timing-function: ease-in-out;
 
@@ -91,24 +75,140 @@ h1,h2,h3,h4,h5,h6{
          
      .sm-container{
         @include helpers.flex($justify:center);
-        margin-top: 10rem;
+        margin-top: 5rem;
 
         .fa-square-linkedin , .fa-github {
             color:helpers.$txt-color;
-            font-size: 40px;
+            font-size: 25px;
         }
     }
-}
+
+
+// --------------- navigation-----------------------
+    .nav-container{
+        @include helpers.flex($justify:space-between);
+        gap: 25rem;
+        margin-top: 2rem;
+
+
+        img{
+            height:70px;
+            width:70px;
+            margin-left: 2rem;
+          
+        }
+
+        ul {
+           @include helpers.flex($justify:flex-start); 
+           gap:20px;
+           list-style: none;
+           li {
+             a{
+                text-decoration: none;
+                color:helpers.$accent-color;
+                font-family: helpers.$font-fam;
+                font-size: 25px;
+                font-weight: 700; 
+
+                &:hover {
+                    color:black;
+                }
+                }
+            
+           }
+        }
+
+        button{
+            border: none;
+            background-color: helpers.$bg-color;
+            margin-right: 2rem;
+
+            .fa-moon{
+                color:helpers.$accent-color;
+                font-size: 25px;
+                
+            }
+        }
+    }
+
+
+    // ----------------about page------------------ 
+
+    // about me section----------
+    .about-sec{
+        @include helpers.flex($align:flex-start);
+        flex-direction: column;
+         margin: 2rem 5rem;
+
+        h1{
+           font-size: 30px; 
+           border-bottom: solid 2px helpers.$accent-color;
+           align-self: flex-start;
+       }
+
+        img{
+            height:50vh;
+            width: 20vw;
+            align-self: center;
+            padding-bottom: 2rem;
+             
+        }
+
+        p{
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+
+
+    }
+
+footer{
+    
+    @include helpers.flex($justify:space-between);
+    background-color: helpers.$accent-color;
+    min-height: 20vh;
+    padding: 0 3rem;
+    
+    img{
+        height:10vh;
+        width:10vw;
+    }
+
+
+    ul{
+           @include helpers.flex($justify:flex-start); 
+           gap:20px;
+           list-style: none;
+            li {
+            
+              a{
+               text-decoration: none;
+               color:helpers.$bg-color;
+               font-family: helpers.$font-fam;
+               font-size: 25px;
+               font-weight: 700;
+
+               &:hover{
+                color:black;
+               }
+            }
+
+           }
+           
+           }
 
         
-    }
+        .fa-square-linkedin, .fa-github{
+            color:helpers.$bg-color;
+            font-size: 30px;
+        }
 
-   img{
-    position: absolute;
-    left:25rem;
-    border:none;
-    border-radius: 50%;
     }
+    
+   
+    
+
 
 
 
