@@ -100,7 +100,34 @@ class About extends Page{
     <span> Hey Iam Nada </span>
     <p>${this.para1} <br> ${this.para2}</p>
     </section>
-        
+
+     <section class="proskills">
+    <h2>Professional Skills</h2>
+    <div>
+    <a href="#"><i class="fa-solid fa-code"></i> Web Development</a>
+    <a href="#"><i class="fa-brands fa-figma"></i> UI/UX Design</a>
+    <a href="#"><i class="fa-solid fa-bezier-curve"></i> Visual Identity</a>
+    <a href="#"><i class="fa-solid fa-magnifying-glass"></i> UX Research</a>
+    </div>
+    </section>
+
+
+    <section class="perskills">
+    <h2>Personal Skills</h2>
+    <img src="img/pskills.png" alt="personal skills">
+    </section>
+
+
+    <section class="lang">
+    <h2>Languages</h2>
+     <ul>
+        <li>Arabic: Native</li>
+        <li>Danish: Very good</li>
+        <li>English: Good</li>
+     </ul>
+     </section>
+
+
         ` 
     }  
 }
@@ -151,19 +178,41 @@ class Home extends Page {
 
 
 
-// document.addEventListener("DOMContentLoaded",function(){
-
-// const page = new Page("Nada Zaher");
-// const home = new Home ("Nada Zaher","UI/UX Designer","Front End Developer", "See My Work","Download CV");
-// document.body.classList.add("home-page");
-// document.body.innerHTML= home.getNav() + home.getContent();
-
-// });
+document.addEventListener("DOMContentLoaded",function(){
 
 const page = new Page("Nada Zaher");
 const home = new Home ("Nada Zaher","UI/UX Designer","Front End Developer", "See My Work","Download CV");
 document.body.classList.add("home-page");
 document.body.innerHTML= home.getNav() + home.getContent();
+
+});
+
+document.body.addEventListener("click",function(event){
+
+    if(event.target.closest(".homePage")){
+        event.preventDefault();
+
+        const home = new Home ("Nada Zaher","UI/UX Designer","Front End Developer", "See My Work","Download CV");
+
+        document.body.classList.add("home-page");
+        document.body.innerHTML= home.getNav() + home.getContent();
+    }
+
+
+    if(event.target.closest("#aboutPage")){
+        event.preventDefault();
+        document.body.classList.remove("home-page");
+
+        const about= new About ("About me","img/me.png","UX/UI Designer & Front-End Developer based in Denmark. I create digital experiences that combine thoughtful design, usability, and clean front-end development.", "From UX research and wireframes to responsive websites, I help transform ideas into products that are accessible, fast, and easy to use.");
+
+         document.body.innerHTML= about.render();
+}
+}
+);
+
+
+
+
 
 
 
@@ -171,25 +220,6 @@ document.body.innerHTML= home.getNav() + home.getContent();
  
 
 
-const aboutPage = document.querySelector("#aboutPage");
 
-aboutPage.addEventListener("click", function(){
-document.body.classList.remove("home-page");
-const page = new Page("Nada Zaher");
-const about= new About ("About me","img/me.png","UX/UI Designer & Front-End Developer based in Denmark. I create digital experiences that combine thoughtful design, usability, and clean front-end development.", "From UX research and wireframes to responsive websites, I help transform ideas into products that are accessible, fast, and easy to use.");
-
-document.body.innerHTML= about.render();
-});
-
-
-const homePage=document.querySelector(".homePage");
-
-homePage.addEventListener("click", function(){
-const page = new Page("Nada Zaher");
-const home = new Home ("Nada Zaher","UI/UX Designer","Front End Developer", "See My Work","Download CV");
-document.body.classList.add("home-page");
-document.body.innerHTML= home.getNav() + home.getContent();
-
-});
 
 

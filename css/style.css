@@ -176,10 +176,82 @@ body {
   font-size: 30px;
   color: #780710;
   font-family: fantasy;
+  align-self: center;
+  padding-bottom: 2rem;
 }
 .about-sec p {
   font-size: 18px;
   font-weight: 400;
+  margin: 0 6rem;
+  border-bottom: solid 1px #B3AEAE;
+  padding-bottom: 3rem;
+}
+
+.proskills {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+.proskills h2 {
+  margin-left: 12rem;
+}
+.proskills div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  align-self: center;
+}
+.proskills div a {
+  border: solid 1px #780710;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px 50px;
+  text-decoration: none;
+  color: #000000;
+  background-color: #FBF7F4;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+}
+
+.perskills {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.perskills h2 {
+  margin-left: 12rem;
+}
+.perskills img {
+  height: 50vh;
+  width: 50vw;
+  align-self: center;
+}
+
+.lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.lang h2 {
+  margin-left: 12rem;
+  align-self: flex-start;
+}
+.lang ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+.lang ul li {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 footer {

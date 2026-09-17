@@ -206,16 +206,85 @@ body{
             font-size: 30px;
             color:helpers.$accent-color;
             font-family: fantasy;
+            align-self: center;
+            padding-bottom: 2rem;
         }
 
         p{
             font-size: 18px;
             font-weight: 400;
+            margin: 0 6rem;
+            border-bottom: solid 1px helpers.$line-color;
+            padding-bottom: 3rem;
         }
 
+    }
 
+    .proskills{
+        @include helpers.flex($align:flex-start);
+        flex-direction: column;
+        margin-bottom: 3rem;
+         h2{
+            margin-left: 12rem;
+         }
+
+       div {
+        @include helpers.flex($justify:center);
+        gap:1.5rem;
+        padding-top: 2rem;
+        align-self: center;
+        a{
+            @include helpers.btn($pad:20px 50px);  
+        }
+   
+    }
+}
+
+    .perskills{
+         @include helpers.flex($align:flex-start);
+         flex-direction: column;
+         
+
+         h2{
+            margin-left: 12rem;
+         }
+
+         img{
+            height:50vh;
+            width: 50vw;
+            // margin-right: 3rem;
+            align-self: center;
+            
+            
+         }
+      
+    }
+
+    .lang{
+        @include helpers.flex($align:center);
+        flex-direction: column;
+        h2{
+            margin-left: 12rem;
+            align-self: flex-start; 
+        }
+
+        ul{
+            list-style: none;
+            @include helpers.flex($justify:center);
+            
+            gap: 10rem;
+
+            li{
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+           
+        }
 
     }
+
+
 
 footer{
     
