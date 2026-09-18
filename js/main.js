@@ -198,7 +198,6 @@ class Contact extends Page {
         
             <section class="contact-me">
                 <h1>${this.title}</h1>
-                <img src="img/mypicture.png" alt="my picture">
                <div class="getintouch"> 
                 <div>
                      <h2>Get In Touch</h2>
@@ -209,13 +208,7 @@ class Contact extends Page {
                 </div>
 
                 <div>
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="36adfe9f-52ef-4532-9124-25a0be9f3f10">
-                    <input type="text" name="name"  id="name" required>
-                    <input type="email" name="email" id="email" required>
-                    <textarea name="message" id="message" required></textarea>
-                    <button type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-                    </form>
+                    <img src="img/contactpict.png" alt="my picture">
                  </div>
             </div>
 
