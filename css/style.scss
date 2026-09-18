@@ -16,6 +16,10 @@ body{
 }
  .home-container{
     @include helpers.flex($align:center);
+    background-image: url(../img/bg10.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
    .main-content{
     width:65%;
@@ -36,17 +40,17 @@ body{
 
          @keyframes myname{
             0%{
-                scale:0;
+                opacity:0;
                 
             }
            
               50%{
-                scale:1;
+                opacity: 0.5 ;
                 
               }
 
               100%{
-                scale:1.5;
+               opacity: 1;
              
               }
                     
@@ -133,7 +137,8 @@ body{
     .nav-container{
         @include helpers.flex($justify:space-between);
         gap: 25rem;
-        margin-top: 2rem;
+        padding-top: 2rem;
+        background-color: helpers.$bg-color;
 
     
              img{
@@ -223,7 +228,7 @@ body{
     .proskills{
         @include helpers.flex($align:flex-start);
         flex-direction: column;
-        margin-bottom: 3rem;
+        padding-bottom: 3rem;
          h2{
             margin-left: 12rem;
          }
@@ -263,6 +268,8 @@ body{
     .lang{
         @include helpers.flex($align:center);
         flex-direction: column;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
         h2{
             margin-left: 12rem;
             align-self: flex-start; 
@@ -284,8 +291,125 @@ body{
 
     }
 
+    .volun{
+        @include helpers.flex($align:flex-start);
+         flex-direction: column;
+         margin-left:12rem;
+         margin-right: 8rem;
+         padding-bottom: 8rem;
+         
+
+         p{
+            font-size: 18px;
+            font-weight: 400;
+            
+        }
+
+        span{
+            font-weight: 700;
+            color: helpers.$accent-color;
+            
+        }
+
+    }
 
 
+    .contact-me{
+        @include helpers.flex($align:center);
+        flex-direction: column;
+        padding-top: 3rem;
+
+                 h1{
+                    font-size: 30px; 
+                    border-bottom: solid 2px helpers.$accent-color;
+                    align-self: flex-start;
+                    margin-left: 5rem;
+                    }
+
+                    img{
+                        height:100px;
+                        width:100px;
+                        padding-bottom: 3rem;
+                    }
+                
+        .getintouch{
+            @include helpers.flex($justify:flex-start);
+            border: solid 2px helpers.$accent-color;
+            border-radius: 30px;
+            padding: 3rem 3rem;
+            margin-bottom: 5rem;
+        
+            div:nth-of-type(1){
+
+                padding: 3rem 3rem;
+                border-radius: 30px;
+               
+                
+
+                
+
+                h2{
+                    color:helpers.$txt-color;
+                }
+                
+                p{
+                    font-size: 18px;
+                    color:helpers.$txt-color;
+                    font-weight: 500;
+                }
+
+                address{
+                    font-size: 18px;
+                    color:helpers.$txt-color;
+                    font-weight: 500;
+
+                }
+
+                a{
+                    text-decoration: none;
+                    font-size: 18px;
+                    color:helpers.$txt-color;
+                    font-weight: 500;
+                }
+            }
+
+             div:nth-of-type(2){
+
+                form{
+                @include helpers.flex($align:center);
+                flex-direction:column;
+                gap:1rem; 
+                
+
+                input{
+                    height:3rem;
+                    width:30rem;
+                    color: helpers.$bg-color;
+                    border: solid 1px helpers.$accent-color;
+                    border-radius: 10px;
+                }
+
+                textarea{
+                     height:15rem;
+                     width:30rem;
+                    color: helpers.$bg-color;
+                    border: solid 1px helpers.$accent-color;
+                    border-radius: 10px;
+
+                }
+
+               }
+
+               
+               
+            
+        }
+
+        }
+           
+    }
+
+       
 footer{
     
     @include helpers.flex($justify:space-between);

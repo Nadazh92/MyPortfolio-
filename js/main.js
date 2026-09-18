@@ -25,8 +25,8 @@ class Page{
             <ul>
                <li><a href="#" class="homePage">Home</a></li>
                <li><a href="#" id="aboutPage">About</a></li>
-               <li><a href="#">Work</a></li>
-               <li><a href="#">Contact</a></li>
+               <li><a href="#" id="workPage">Work</a></li>
+               <li><a href="#" id="contactPage">Contact</a></li>
             </ul>
 
             <button><i class="fa-regular fa-moon"></i></button>
@@ -128,6 +128,13 @@ class About extends Page{
      </section>
 
 
+     <section class="volun">
+    <h2>Volunteering</h2>
+    <span>Webshop assistant - Danish Red Cross</span>
+    <p>Responsible for accurately entering and managing clothing products in the webshop, ensuring product information and details are correct and making it easy for customers to browse and shop from a wide selection of items.</p>
+    </section>
+
+
         ` 
     }  
 }
@@ -141,8 +148,10 @@ class Home extends Page {
         this.fCta=fCta;
         this.sCta=sCta;
     }
+  
 
     getContent(){
+        
         return`
         <section class="home-container">
         
@@ -173,6 +182,52 @@ class Home extends Page {
     }
 }
 
+
+class Contact extends Page {
+    constructor (title,adres,email,phone,linkedin){
+        super(title);
+        this.title=title;
+        this.adres=adres;
+        this.email=email;
+        this.phone=phone;
+        this.linkedin=linkedin;
+    }
+
+        getContent(){
+        return `
+        
+            <section class="contact-me">
+                <h1>${this.title}</h1>
+                <img src="img/mypicture.png" alt="my picture">
+               <div class="getintouch"> 
+                <div>
+                     <h2>Get In Touch</h2>
+                    <address><i class="fa-solid fa-location-dot"></i>  ${this.adres}</address>
+                    <p><i class="fa-solid fa-envelope"></i>  ${this.email} </p>
+                    <p><i class="fa-solid fa-phone"></i>  ${this.phone}</p>
+                    <a href="nada-zaher-167087384"><i class="fa-brands fa-square-linkedin"></i> ${this.linkedin}</a> 
+                </div>
+
+                <div>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="36adfe9f-52ef-4532-9124-25a0be9f3f10">
+                    <input type="text" name="name"  id="name" required>
+                    <input type="email" name="email" id="email" required>
+                    <textarea name="message" id="message" required></textarea>
+                    <button type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                 </div>
+            </div>
+
+                </section>
+                        `
+    }      
+        }
+    
+
+
+
+
 // ----------------------------------------------
 
 
@@ -200,6 +255,7 @@ document.body.addEventListener("click",function(event){
 
 
     if(event.target.closest("#aboutPage")){
+        
         event.preventDefault();
         document.body.classList.remove("home-page");
 
@@ -207,8 +263,19 @@ document.body.addEventListener("click",function(event){
 
          document.body.innerHTML= about.render();
 }
+
+      if(event.target.closest("#contactPage")){
+        // console.log("iam her");
+        event.preventDefault();
+        document.body.classList.remove("home-page");
+
+        const contact= new Contact("Contact me", "Pilevænget 13,st.tv Vejle,Denmark", "nada.zh92@gmail.com","+45 42500158","My Linkedin account");
+         document.body.innerHTML= contact.render();
+}
 }
 );
+
+
 
 
 
