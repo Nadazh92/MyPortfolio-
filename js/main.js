@@ -7,6 +7,9 @@
 //  myname.style.transform = "rotate(60deg)";
 // }
 
+
+
+
 class Page{
     constructor(title){
         this.title=title;
