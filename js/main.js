@@ -27,8 +27,9 @@ class Page{
             
             <ul>
                <li><a href="#" class="homePage">Home</a></li>
-               <li><a href="#" id="aboutPage">About</a></li>
-               <li><a href="#" id="workPage">Work</a></li>
+               <li><a href="#" id="workPage">Projects</a></li>
+                <li><a href="#" >Process</a></li>
+                <li><a href="#" id="aboutPage">About</a></li>
                <li><a href="#" id="contactPage">Contact</a></li>
             </ul>
 
@@ -201,6 +202,8 @@ class Contact extends Page {
         
             <section class="contact-me">
                 <h1>${this.title}</h1>
+                <h2>Let's work together</h2>
+                
                <div class="getintouch"> 
                 <div>
                      <h2>Get In Touch</h2>
@@ -211,7 +214,7 @@ class Contact extends Page {
                 </div>
 
                 <div>
-                    <img src="img/contactpict.png" alt="my picture">
+                    <img src="img/copic.png" alt="my picture">
                  </div>
             </div>
 
@@ -219,9 +222,83 @@ class Contact extends Page {
                         `
     }      
         }
+
+
+
+class ProjectCard {
+    constructor(src, alt, title, link, fBtn, fBtnhref, sBtn, sBtnhref){
+        this.src =src;
+        this.alt=alt;
+        this.title=title;
+        this.link=link;
+        this.fBtn=fBtn;
+        this.sBtn=sBtn;
+        this.fBtnhref =fBtnhref;
+        this.sBtnhref=sBtnhref;
+    }
+
+    render(){
+        const article=document.createElement("article");
+        const image = document.createElement("img");
+        image.src= this.src;
+        image.alt=this.alt;
+
+        const heading = document.createElement("h2");
+        heading.textContent= this.title;
+
+        const readMore = document.createElement("a");
+        readMore.textContent = this.link;
+
+        const btnContainer =document.createElement("div");
+        
+
+        const firstBtn = document.createElement("a");
+        firstBtn.textContent= this.fBtn;
+        firstBtn.href= this.fBtnhref;
+        btnContainer.append(firstBtn);
+       
+
+        const secondBtn = document.createElement("a");
+        secondBtn.textContent=this.sBtn;
+        secondBtn.href=this.sBtnhref;
+        btnContainer.append(secondBtn);
+      
+
+        // article.append(image,heading,readMore,firstBtn,secondBtn);
+        article.append(image,heading,readMore,btnContainer);
+
+        return article;
+    }
+}
+
+
+class Projects {
+    constructor(title, projectsList){
+        this.title=title;
+        this.projectsList=projectsList;  
+    }
+
+    render(){
+       const section = document.createElement("section");
+       section.className ="project-cards";
+       const heading = document.createElement("h1");
+       const myProjects = document.createElement("div");
+
+       heading.textContent= this.title;
+       myProjects.className = "project-list";
+
+       this.projectsList.forEach(project => {
+        myProjects.append(project.render());
+        });
+        // her kalder jeg på ProjectCard method via project.render();
+
+         section.append(heading, myProjects);
+
+        return section;
+ 
+    }
+}
     
-
-
 
 
 // ----------------------------------------------
@@ -267,6 +344,55 @@ document.body.addEventListener("click",function(event){
 
         const contact= new Contact("Contact me", "Pilevænget 13,st.tv Vejle,Denmark", "nada.zh92@gmail.com","+45 42500158","My Linkedin account");
          document.body.innerHTML= contact.render();
+}
+
+        if(event.target.closest("#workPage")){
+         console.log("iam her");
+        event.preventDefault();
+        document.body.classList.remove("home-page");
+        const work = new Page ("My featured Work");
+        
+        const projects = [
+
+            new ProjectCard("img/project1.png", 
+                "Lady Balance Project",
+                 "Lady Balance", 
+                 "Read more about the case",
+                 "Live Website", 
+                 "http://nadazh.dk/LB/", 
+                 "Source Code", 
+                 "https://github.com/Nadazh92/LB"
+                ),
+
+            new ProjectCard("img/project2.png", 
+                "Gran & Craft Project",
+                 "Gran & Craft", 
+                 "Read more about the case",
+                 "Live Website", 
+                 "http://nadazh.dk/LB/", 
+                 "Source Code", 
+                 "https://github.com/Nadazh92/GarnogCraft"
+                ),
+
+            new ProjectCard("img/project2.png", 
+                "GLS PlayBook project",
+                 "GLS AI PlayBook", 
+                 "Read more about the case",
+                 "Prototypen", 
+                 "https://tinyurl.com/dwjt8pe9", 
+                 "Download filen", 
+                 "https://github.com/Nadazh92/GarnogCraft"
+                ),
+
+        ];
+        
+
+         const pro = new Projects ("My feature Work", projects);
+         document.body.innerHTML = work.getNav() + ` <main id="project-content"></main>` + work.getFooter();
+
+         const projectContent = document.querySelector("#project-content");
+         projectContent.append(pro.render());
+   
 }
 }
 );
