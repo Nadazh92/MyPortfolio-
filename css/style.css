@@ -63,7 +63,7 @@ body {
   gap: 1rem;
 }
 .cta-home-container a {
-  border: solid 1px #780710;
+  border: solid 2px #780710;
   border-radius: 20px;
   text-align: center;
   padding: 10px 50px;
@@ -211,7 +211,7 @@ body {
   align-self: center;
 }
 .proskills div a {
-  border: solid 1px #780710;
+  border: solid 2px #780710;
   border-radius: 20px;
   text-align: center;
   padding: 20px 50px;
@@ -356,21 +356,62 @@ body {
   flex-direction: column;
   gap: 3rem;
   padding-top: 4rem;
+  margin-bottom: 5rem;
 }
 .project-cards div article {
   border: solid 1px #B3AEAE;
   border-radius: 20px;
-  padding: 2rem 3rem;
+  padding: 1rem 1rem;
+}
+.project-cards div article h2 {
+  margin-left: 2rem;
+  margin-bottom: 0;
 }
 .project-cards div article img {
-  height: 50vh;
-  width: 100%;
+  height: 45vh;
+  width: 50vw;
+  border-radius: 20px;
+  opacity: 70%;
+}
+.project-cards div article img:hover {
+  height: 44vh;
+  width: 49vw;
+  transition: 1s ease-in;
+  opacity: 100%;
+}
+.project-cards div article a {
+  color: #780710;
+  font-size: 15px;
+  font-weight: 650;
+  text-decoration: none;
+  margin-left: 2rem;
+  padding-bottom: 0.5rem;
 }
 .project-cards div article div {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
+  gap: 0px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.project-cards div article div a {
+  border: solid 2px #780710;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px 40px;
+  text-decoration: none;
+  color: #000000;
+  background-color: transparent;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+}
+.project-cards div article div a:hover {
+  font-size: 17px;
+  font-weight: 700;
+  border: solid 2px rgb(10, 96, 10);
+  transition: 0.7s ease-out;
 }
 
 footer {

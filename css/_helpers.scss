@@ -13,7 +13,7 @@ $font-fam: "Noto Sans", sans-serif;
 }
 
 @mixin btn($pad: 10px 20px){
-    border: solid 1px $accent-color;
+    border: solid 2px $accent-color;
     border-radius: 20px;
     text-align: center;
     padding: $pad;

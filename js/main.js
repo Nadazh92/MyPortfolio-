@@ -226,11 +226,12 @@ class Contact extends Page {
 
 
 class ProjectCard {
-    constructor(src, alt, title, link, fBtn, fBtnhref, sBtn, sBtnhref){
+    constructor(src, alt, title, link,lHref, fBtn, fBtnhref, sBtn, sBtnhref){
         this.src =src;
         this.alt=alt;
         this.title=title;
         this.link=link;
+        this.lHref= lHref;
         this.fBtn=fBtn;
         this.sBtn=sBtn;
         this.fBtnhref =fBtnhref;
@@ -248,6 +249,7 @@ class ProjectCard {
 
         const readMore = document.createElement("a");
         readMore.textContent = this.link;
+        readMore.href=this.lHref;
 
         const btnContainer =document.createElement("div");
         
@@ -350,14 +352,15 @@ document.body.addEventListener("click",function(event){
          console.log("iam her");
         event.preventDefault();
         document.body.classList.remove("home-page");
-        const work = new Page ("My featured Work");
+        const work = new Page ("Real Life case Studies");
         
         const projects = [
 
-            new ProjectCard("img/project1.png", 
+            new ProjectCard("img/LB.png", 
                 "Lady Balance Project",
                  "Lady Balance", 
                  "Read more about the case",
+                 "#",
                  "Live Website", 
                  "http://nadazh.dk/LB/", 
                  "Source Code", 
@@ -365,19 +368,21 @@ document.body.addEventListener("click",function(event){
                 ),
 
             new ProjectCard("img/project2.png", 
-                "Gran & Craft Project",
-                 "Gran & Craft", 
+                "Garn & Craft Project",
+                 "Garn & Craft", 
                  "Read more about the case",
+                 "#",
                  "Live Website", 
                  "http://nadazh.dk/LB/", 
                  "Source Code", 
                  "https://github.com/Nadazh92/GarnogCraft"
                 ),
 
-            new ProjectCard("img/project2.png", 
+            new ProjectCard("img/Playbook.png", 
                 "GLS PlayBook project",
                  "GLS AI PlayBook", 
                  "Read more about the case",
+                 "#",
                  "Prototypen", 
                  "https://tinyurl.com/dwjt8pe9", 
                  "Download filen", 
@@ -387,7 +392,7 @@ document.body.addEventListener("click",function(event){
         ];
         
 
-         const pro = new Projects ("My feature Work", projects);
+         const pro = new Projects ("Real case studies", projects);
          document.body.innerHTML = work.getNav() + ` <main id="project-content"></main>` + work.getFooter();
 
          const projectContent = document.querySelector("#project-content");
