@@ -28,7 +28,7 @@ class Page{
             <ul>
                <li><a href="#" class="homePage">Home</a></li>
                <li><a href="#" id="workPage">Projects</a></li>
-                <li><a href="#" >Process</a></li>
+                <li><a href="#" id="ProcessPage">Process</a></li>
                 <li><a href="#" id="aboutPage">About</a></li>
                <li><a href="#" id="contactPage">Contact</a></li>
             </ul>
@@ -56,10 +56,12 @@ class Page{
 
              <ul>
                <li><a href="#" class="homePage">Home</a></li>
-               <li><a href="#" id="aboutPage">About</a></li>
-               <li><a href="#">Work</a></li>
-               <li><a href="#">Contact</a></li>
+               <li><a href="#" id="workPage">Projects</a></li>
+                <li><a href="#" id="ProcessPage">Process</a></li>
+                <li><a href="#" id="aboutPage">About</a></li>
+               <li><a href="#" id="contactPage">Contact</a></li>
             </ul>
+
            
             <div>
              <a href="https://www.linkedin.com/in/nada-zaher-167087384/"><i class="fa-brands fa-square-linkedin"></i></a>
@@ -170,8 +172,8 @@ class Home extends Page {
             
 
             <div class="cta-home-container" >
-                <a href="#" class="seemywork">${this.fCta} <i class="fa-solid fa-arrow-right-long"></i></a>
-                <a href="#" class="downloadcv">${this.sCta}</a>
+                <a href="#" class="seemywork" id="seemywork-button">${this.fCta} <i class="fa-solid fa-arrow-right-long"></i></a>
+                <a href="pdf/Nada-Zaher-CV.pdf" download="" class="downloadcv">${this.sCta}</a>
             </div>
 
             <div class="sm-container">
@@ -356,7 +358,48 @@ class Cases {
 
 
 }
-    
+
+
+class Process {
+
+    constructor(title){
+        this.title=title;
+    }
+
+    render(){
+        return `
+            <section class="process-container">
+            <h1>${this.title}</h1>
+
+        <div class="process-content">
+            <img src="img/DP-image.png" alt="Design process image">
+            
+
+               <div class="steps">
+                <div>
+                    <h2>1. <i class="fa-regular fa-eye"></i> Discover</h2>
+                    <p>I start by learning about your brand, users, and objectives.</p>
+                </div>
+                <div>
+                    <h2>2. <i class="fa-solid fa-magnifying-glass"></i> Research</h2>
+                    <p>Explore competitors, and best practices to ensure the solution.</p>
+                </div>
+                <div>
+                    <h2>3. <i class="fa-solid fa-bezier-curve"></i> Design</h2>
+                    <p>I create wireframes and  UI concepts focused on usability.</p>
+                </div>
+                <div>
+                    <h2>4. <i class="fa-solid fa-code"></i> Develop</h2>
+                    <p>I transform designs into high-performance websites.</p>
+                </div>
+
+               </div>
+
+        </div>
+                </section>
+        `
+    }
+}
 
 
 // ----------------------------------------------
@@ -404,7 +447,7 @@ document.body.addEventListener("click",function(event){
          document.body.innerHTML= contact.render();
 }
 
-        if(event.target.closest("#workPage")){
+        if(event.target.closest("#workPage") || event.target.closest("#seemywork-button")) {
          console.log("iam her");
         event.preventDefault();
         document.body.classList.remove("home-page");
@@ -452,7 +495,7 @@ document.body.addEventListener("click",function(event){
         
 
          const pro = new Projects ("Real case studies", projects);
-         document.body.innerHTML = work.getNav() + ` <main id="project-content"></main>` + work.getFooter();
+         document.body.innerHTML = work.getNav() + ` <main id="project-content"></main>` ;
 
          const projectContent = document.querySelector("#project-content");
          projectContent.append(pro.render());
@@ -566,11 +609,15 @@ document.body.addEventListener("click",function(event){
 
         }
 
-        
 
-
-
-
+                if(event.target.closest("#ProcessPage")){
+                    event.preventDefault();
+                    document.body.classList.remove("home-page");
+                    
+                    const DesignPro = new Page ("Real Life case Studies");
+                    const process= new Process("Design Process");
+                    document.body.innerHTML= DesignPro.getNav() + process.render() ;
+}
 
 });
 
