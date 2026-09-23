@@ -371,13 +371,11 @@ body {
   height: 45vh;
   width: 50vw;
   border-radius: 20px;
-  opacity: 70%;
 }
 .project-cards div article img:hover {
   height: 44vh;
   width: 49vw;
   transition: 1s ease-in;
-  opacity: 100%;
 }
 .project-cards div article a {
   color: #780710;
@@ -412,6 +410,62 @@ body {
   font-weight: 700;
   border: solid 2px rgb(10, 96, 10);
   transition: 0.7s ease-out;
+}
+
+.case-study {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 5rem 10rem;
+}
+.case-study > img {
+  align-self: center;
+  height: 80vh;
+  width: 100%;
+}
+.case-study .case-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding-bottom: 3rem;
+}
+.case-study .case-info p {
+  font-weight: 700;
+}
+.case-study span {
+  font-weight: 700;
+  font-size: 25px;
+}
+.case-study p {
+  font-size: 20px;
+  font-weight: 500;
+}
+.case-study .links-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+.case-study .links-container a {
+  color: #780710;
+  font-size: 20px;
+  text-decoration: none;
+  border-bottom: #780710;
+}
+.case-study .img-gallery {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  padding-top: 3rem;
+}
+.case-study .img-gallery img {
+  height: 50vh;
+  width: 18vw;
 }
 
 footer {

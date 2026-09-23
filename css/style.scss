@@ -445,15 +445,12 @@ body{
                 height: 45vh;
                 width: 50vw;
                 border-radius: 20px;
-                opacity: 70%;
-                
-                
-
+            
                 &:hover{
                     height: 44vh;
                     width: 49vw;
                     transition: 1s ease-in;
-                    opacity: 100%;
+                    
                     
                 }
             }
@@ -494,6 +491,73 @@ body{
           
         } 
     }
+
+
+    .case-study{
+        @include helpers.flex($align:flex-start);
+        flex-direction:column;
+        margin: 5rem 10rem;
+        
+
+       > img{
+            align-self: center;
+            height:80vh;
+            width: 100%;
+        }
+
+        .case-info{
+            @include helpers.flex($justify:center);
+            gap: 5rem;
+            padding-bottom: 3rem;
+
+            p{
+                font-weight: 700;
+            }
+        }
+
+        span{
+            font-weight: 700;
+            font-size: 25px;
+        }
+
+        p{
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .links-container{
+            @include helpers.flex($justify:flex-start);
+            flex-direction: row;
+            gap:2rem;
+
+            a{
+                color:helpers.$accent-color;
+                font-size: 20px;
+                text-decoration: none;
+                border-bottom: helpers.$accent-color;
+            }
+
+        }
+         .img-gallery{
+            @include helpers.flex($justify:flex-start);
+            flex-direction: row;
+            gap:1rem;
+            padding-top: 3rem;
+            img{
+
+            height: 50vh;
+            width: 18vw;
+
+            }
+          
+
+
+        }
+  
+    }
+
+        
+
     
 
        
