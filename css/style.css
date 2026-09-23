@@ -351,9 +351,9 @@ body {
 }
 .project-cards div {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   gap: 3rem;
   padding-top: 4rem;
   margin-bottom: 5rem;
@@ -364,26 +364,25 @@ body {
   padding: 1rem 1rem;
 }
 .project-cards div article h2 {
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-bottom: 0;
 }
 .project-cards div article img {
-  height: 45vh;
-  width: 50vw;
+  height: 22vh;
+  width: 25vw;
   border-radius: 20px;
-}
-.project-cards div article img:hover {
-  height: 44vh;
-  width: 49vw;
-  transition: 1s ease-in;
 }
 .project-cards div article a {
   color: #780710;
   font-size: 15px;
   font-weight: 650;
   text-decoration: none;
-  margin-left: 2rem;
+  margin-left: 1rem;
   padding-bottom: 0.5rem;
+}
+.project-cards div article a:hover {
+  color: rgb(10, 96, 10);
+  transition: 0.3s ease-in;
 }
 .project-cards div article div {
   display: flex;
@@ -398,7 +397,7 @@ body {
   border: solid 2px #780710;
   border-radius: 20px;
   text-align: center;
-  padding: 10px 40px;
+  padding: 8px 25px;
   text-decoration: none;
   color: #000000;
   background-color: transparent;
@@ -464,8 +463,8 @@ body {
   padding-top: 3rem;
 }
 .case-study .img-gallery img {
-  height: 50vh;
-  width: 18vw;
+  height: 35vh;
+  width: 15vw;
 }
 
 footer {

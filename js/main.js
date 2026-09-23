@@ -442,10 +442,10 @@ document.body.addEventListener("click",function(event){
                  "Read more about the case",
                  "#",
                  "read-more-gls",
-                 "Prototypen", 
+                 "View Playbook", 
                  "https://tinyurl.com/dwjt8pe9", 
-                 "Download filen", 
-                 "https://github.com/Nadazh92/GarnogCraft"
+                 "Design Process", 
+                 "https://tinyurl.com/mrxaasnc"
                 ),
 
         ];
@@ -477,7 +477,9 @@ document.body.addEventListener("click",function(event){
          "A more professional, trustworthy, and user-friendly digital concept that strengthens brand recognition, improves the customer journey, and creates better opportunities for engagement and customer loyalty.",
          "Figma - HTML - CSS & SCSS - javaScript - SEO Tools -  Adobe Illustrator, Indesign, After Effect, Premiere Pro. ",
          "https://indd.adobe.com/view/642a4652-42c9-4cb2-bf50-a277dded91ff",
+         "See Design Guide",
          "https://tinyurl.com/4m7nndbk",
+         "See Prototype",
          "img/LB-image1.png",
          "img/LB-image2.png",
          "img/LB-image3.png",
@@ -506,10 +508,14 @@ document.body.addEventListener("click",function(event){
          "Applied Design Thinking, user research and usability testing to develop a responsive website with clear navigation, accessible design and a stronger focus on creativity and community.",
          "Created a modern website concept that improved visual clarity and usability, providing a foundation for a stronger digital presence and broader audience engagement.",
          "Figma - HTML - CSS - Adobe Photoshop ",
-         "https://indd.adobe.com/view/642a4652-42c9-4cb2-bf50-a277dded91ff",
-         "https://tinyurl.com/4m7nndbk",
-         "img/me2.png",
-         "img/me2.png"
+         "https://www.figma.com/proto/H1hYHBDrfDsKzYrPTx5X7A/Garn-og-Craft?node-id=2-127&t=DmzqRZsnb17oT9Kr-1&scaling=min-zoom&content-scaling=fixed&page-id=2%3A102",
+         "See Prototype",
+         "https://github.com/Nadazh92/GarnogCraft",
+         "See Source Code",
+         "img/gg1.png",
+         "img/gg2.png",
+         "img/gg3.png",
+         "img/gg4.png"
          );
 
     
@@ -520,6 +526,47 @@ document.body.addEventListener("click",function(event){
           caseContent.innerHTML = garnandcraftCase.render();
 
         }
+
+
+             if(event.target.closest("#read-more-gls")){
+      
+                event.preventDefault(); 
+                document.body.classList.remove("home-page");
+                const ggCase = new Page ("Garn and Craft case study");
+
+                const garnandcraftCase = new Cases("img/PlayBook.png",
+                " GLS",
+                " 2026",
+                " 18 days",
+                "AI Playbook for GLS, designed as a practical PDF guid. <br> Presentation explaining the design process, content structure, and design decisions. ",
+
+                "Make AI easier to understand and apply in employees' everyday work. <br>  Address uncertainty about data security, responsible AI use, and quality assurance. <br> Create a solution that supports employees with different levels of AI knowledge and professional experience.",
+
+                "Developed a clear and user-friendly AI Playbook using simple language and practical use cases. <br> Organized the content to make relevant information easy to find and understand. <br> Designed the Playbook to support employees across different professional backgrounds and AI skill levels. <br> Included guidance on data security, responsible AI use, and quality assurance.",
+
+                "Created an accessible and practical AI resource for GLS employees. <br> Translated complex AI-related topics into clear and actionable information. <br> Delivered a structured Playbook that provides a foundation for more confident and responsible AI use in the workplace. ",
+
+                "Figma - ChatGPT",
+                "https://tinyurl.com/rf5ttftr",
+                "See Playbook",
+                " ",
+                " ",
+                "img/gls.png",
+                "img/gls1.png",
+                "img/gls2.png",
+                "img/gls3.png"
+                );
+
+            
+
+
+                document.body.innerHTML = ggCase.getNav() +  ` <main id="case-content"></main>` + ggCase.getFooter();
+                const caseContent = document.querySelector("#case-content");
+                caseContent.innerHTML = garnandcraftCase.render();
+
+        }
+
+        
 
 
 
