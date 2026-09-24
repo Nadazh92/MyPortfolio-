@@ -102,9 +102,14 @@ class About extends Page{
         return `
     <section class="about-sec">
     <h1>${this.title}</h1>
+    <div class="about-container">
     <img src=${this.img} alt="my picture">
+    <div>
     <span> Hey Iam Nada </span>
     <p>${this.para1} <br> ${this.para2}</p>
+     <a href="#" id="about-contactme">Contact me</a>
+    </div>
+    </div>
     </section>
 
      <section class="proskills">
@@ -209,14 +214,37 @@ class Contact extends Page {
                <div class="getintouch"> 
                 <div>
                      <h2>Get In Touch</h2>
-                    <address><i class="fa-solid fa-location-dot"></i>  ${this.adres}</address>
-                    <p><i class="fa-solid fa-envelope"></i>  ${this.email} </p>
                     <p><i class="fa-solid fa-phone"></i>  ${this.phone}</p>
+                    <p><i class="fa-solid fa-envelope"></i>  ${this.email} </p>
                     <a href="nada-zaher-167087384"><i class="fa-brands fa-square-linkedin"></i> ${this.linkedin}</a> 
+                    <address><i class="fa-solid fa-location-dot"></i>  ${this.adres}</address>
                 </div>
 
                 <div>
-                    <img src="img/copic.png" alt="my picture">
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="36adfe9f-52ef-4532-9124-25a0be9f3f10">
+
+                   
+                     <div class="field">
+                    <label for="name" id="name">Fullname</label>
+                    <input type="text" name="name"  id="name"  placeholder=" Enter your name" autocomplete="name" required>
+                    </div>
+
+                    <div class="field">
+                    <label for="email" id="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder=" Enter your email"  autocomplete="email" required>
+                     </div>
+
+
+                    <div class="field">
+                    <label for="message" id="message">Message</label>
+                    <textarea name="message" id="message"  required></textarea>
+                     </div>
+                    <button type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+
+                    <p id="feedback" role="status" aria-live="polite" aria-atomic="true"  class="feedback"  hidden ></p>
+                        
                  </div>
             </div>
 
@@ -438,13 +466,13 @@ document.body.addEventListener("click",function(event){
          document.body.innerHTML= about.render();
 }
 
-      if(event.target.closest("#contactPage")){
+      if(event.target.closest("#contactPage") || event.target.closest("#about-contactme")){
         // console.log("iam her");
         event.preventDefault();
         document.body.classList.remove("home-page");
 
         const contact= new Contact("Contact me", "Pilevænget 13,st.tv Vejle,Denmark", "nada.zh92@gmail.com","+45 42500158","My Linkedin account");
-         document.body.innerHTML= contact.render();
+        document.body.innerHTML = contact.getNav() + contact.getContent();
 }
 
         if(event.target.closest("#workPage") || event.target.closest("#seemywork-button")) {

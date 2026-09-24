@@ -171,25 +171,35 @@ body {
   border-bottom: solid 2px #780710;
   align-self: flex-start;
 }
-.about-sec img {
+.about-sec .about-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: solid 1px #B3AEAE;
+  margin-left: 8rem;
+}
+.about-sec .about-container img {
   height: 50vh;
   width: 20vw;
   align-self: center;
   padding-bottom: 2rem;
 }
-.about-sec span {
+.about-sec .about-container span {
   font-size: 30px;
   color: #780710;
   font-family: fantasy;
   align-self: center;
   padding-bottom: 2rem;
+  margin-left: 3rem;
+  margin-right: 8rem;
 }
-.about-sec p {
+.about-sec .about-container p {
   font-size: 18px;
   font-weight: 400;
-  margin: 0 6rem;
-  border-bottom: solid 1px #B3AEAE;
+  margin-left: 3rem;
+  margin-right: 8rem;
   padding-bottom: 3rem;
+  line-height: 40px;
 }
 
 .proskills {
@@ -284,7 +294,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 3rem;
+  padding-top: 2rem;
   background-image: url(../img/bg-home.png);
   background-size: cover;
 }
@@ -297,44 +307,91 @@ body {
 .contact-me h2 {
   font-family: fantasy;
   align-self: center;
+  color: #780710;
 }
 .contact-me .getintouch {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  gap: 4rem;
   border: solid 2px #780710;
   border-radius: 30px;
   margin-bottom: 5rem;
-  margin-top: 3rem;
-  padding: 2rem 3rem;
+  padding: 3rem 3rem;
 }
 .contact-me .getintouch div:nth-of-type(1) {
-  border-radius: 30px;
-  padding-left: 3rem;
+  padding-bottom: 1rem;
 }
 .contact-me .getintouch div:nth-of-type(1) h2 {
   color: #000000;
-  padding-bottom: 2rem;
 }
 .contact-me .getintouch div:nth-of-type(1) p {
-  font-size: 18px;
+  font-size: 15px;
   color: #000000;
   font-weight: 700;
 }
 .contact-me .getintouch div:nth-of-type(1) address {
-  font-size: 18px;
+  font-size: 15px;
   color: #000000;
   font-weight: 700;
+  padding-top: 1rem;
 }
 .contact-me .getintouch div:nth-of-type(1) a {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   color: #000000;
   font-weight: 700;
 }
-.contact-me .getintouch div:nth-of-type(2) img {
-  height: 50vh;
-  width: 25vw;
+.contact-me .getintouch div:nth-of-type(2) form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-me .getintouch div:nth-of-type(2) form .field {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 3px;
+}
+.contact-me .getintouch div:nth-of-type(2) form .field label {
+  font-weight: 600;
+}
+.contact-me .getintouch div:nth-of-type(2) form .field input {
+  height: 2rem;
+  width: 30rem;
+  color: #FBF7F4;
+  border: solid 1px #780710;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.contact-me .getintouch div:nth-of-type(2) form .field textarea {
+  height: 10rem;
+  width: 30rem;
+  color: #FBF7F4;
+  border: solid 1px #780710;
+  border-radius: 10px;
+  background-color: transparent;
+  resize: none;
+}
+.contact-me .getintouch div:nth-of-type(2) form button {
+  border: solid 2px #780710;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px 80px;
+  text-decoration: none;
+  color: #000000;
+  background-color: transparent;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+.contact-me .getintouch div:nth-of-type(2) form button:hover {
+  border-color: rgb(10, 96, 10);
+  font-size: 17px;
+  transition: 0.3s ease-in;
 }
 
 .project-cards {
