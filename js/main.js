@@ -145,7 +145,6 @@ class About extends Page{
     <p>Responsible for accurately entering and managing clothing products in the webshop, ensuring product information and details are correct and making it easy for customers to browse and shop from a wide selection of items.</p>
     </section>
 
-
         ` 
     }  
 }
@@ -209,45 +208,59 @@ class Contact extends Page {
         
             <section class="contact-me">
                 <h1>${this.title}</h1>
-                <h2>Let's work together</h2>
-                
+            <div class="contact-container">
                <div class="getintouch"> 
-                <div>
-                     <h2>Get In Touch</h2>
-                    <p><i class="fa-solid fa-phone"></i>  ${this.phone}</p>
-                    <p><i class="fa-solid fa-envelope"></i>  ${this.email} </p>
-                    <a href="nada-zaher-167087384"><i class="fa-brands fa-square-linkedin"></i> ${this.linkedin}</a> 
-                    <address><i class="fa-solid fa-location-dot"></i>  ${this.adres}</address>
+                
+                   <h2>Get In Touch</h2>
+
+                    <div class="contact-info">
+                    
+                        <p> <i class="fa-solid fa-phone"></i> ${this.phone}</p> 
+                         <p><i class="fa-solid fa-envelope"></i>  ${this.email} </p>
+                         <address> <i class="fa-solid fa-location-dot"></i> ${this.adres}</address>
+                    </div>
+
+                     <div class="contact-sm">
+                         <a href="https://www.linkedin.com/in/nada-zaher-167087384/"><i class="fa-brands fa-square-linkedin"></i></a>
+                        <a href="https://github.com/Nadazh92"><i class="fa-brands fa-github"></i></a>
+                    </div>
+
                 </div>
 
-                <div>
-                    <form action="https://api.web3forms.com/submit" method="POST">
+                <div class="contact-form">
+                    <h2>Let's work together</h2>
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contactform" novalidate>
                     <input type="hidden" name="access_key" value="36adfe9f-52ef-4532-9124-25a0be9f3f10">
+                    
 
-                   
                      <div class="field">
-                    <label for="name" id="name">Fullname</label>
+                    <label for="name">Fullname</label>
                     <input type="text" name="name"  id="name"  placeholder=" Enter your name" autocomplete="name" required>
                     </div>
 
                     <div class="field">
-                    <label for="email" id="email">Email</label>
+                    <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder=" Enter your email"  autocomplete="email" required>
                      </div>
 
 
                     <div class="field">
-                    <label for="message" id="message">Message</label>
+                    <label for="message">Message</label>
                     <textarea name="message" id="message"  required></textarea>
                      </div>
-                    <button type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-                    </form>
 
                     <p id="feedback" role="status" aria-live="polite" aria-atomic="true"  class="feedback"  hidden ></p>
+
+                    <button type="submit" id="submit-btn"><i class="fa-solid fa-paper-plane"></i> Send Message </button>
+
+                    </form>
+
+                   
                         
                  </div>
             </div>
 
+        </div>
                 </section>
                         `
     }      
@@ -430,6 +443,99 @@ class Process {
 }
 
 
+// -----------------------------------
+
+// contact form function 
+
+function setupContactForm() {
+
+    const form = document.querySelector("#contactform");
+    const feedback = document.querySelector("#feedback");
+
+    if (!form || !feedback) {
+        return;
+    }
+
+    console.log("Contact form is ready");
+
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name = form.querySelector("#name");
+        const email = form.querySelector("#email");
+        const message = form.querySelector("#message");
+
+        const nameValue = name.value.trim();
+        const emailValue = email.value.trim();
+        const messageValue = message.value.trim();
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        feedback.hidden = false;
+        feedback.className = "feedback";
+
+        name.removeAttribute("aria-invalid");
+        email.removeAttribute("aria-invalid");
+        message.removeAttribute("aria-invalid");
+
+
+        if (nameValue === "") {
+
+            name.setAttribute("aria-invalid", "true");
+
+            feedback.textContent = "Please enter your name.";
+            feedback.classList.add("feedback--error");
+
+            name.focus();
+
+            return;
+
+        }
+
+
+        if (!emailPattern.test(emailValue)) {
+
+            email.setAttribute("aria-invalid", "true");
+
+            feedback.textContent = "Please enter a valid email address.";
+            feedback.classList.add("feedback--error");
+
+            email.focus();
+
+            return;
+
+        }
+
+
+        if (messageValue === "") {
+
+            message.setAttribute("aria-invalid", "true");
+
+            feedback.textContent = "Please enter your message.";
+            feedback.classList.add("feedback--error");
+
+            message.focus();
+
+            return;
+
+        }
+
+
+        feedback.textContent = "Your message is sucessfully sent.";
+        feedback.classList.add("feedback--success");
+
+        form.submit();
+
+
+    });
+
+}
+
+
+
+
+
 // ----------------------------------------------
 
 
@@ -471,8 +577,11 @@ document.body.addEventListener("click",function(event){
         event.preventDefault();
         document.body.classList.remove("home-page");
 
-        const contact= new Contact("Contact me", "Pilevænget 13,st.tv Vejle,Denmark", "nada.zh92@gmail.com","+45 42500158","My Linkedin account");
+        const contact= new Contact("Contact me", "Pilevænget 13,st.tv Vejle, Denmark", "nada.zh92@gmail.com","+45 42 50 01 58","My Linkedin account");
         document.body.innerHTML = contact.getNav() + contact.getContent();
+
+        setupContactForm();
+
 }
 
         if(event.target.closest("#workPage") || event.target.closest("#seemywork-button")) {
