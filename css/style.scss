@@ -6,10 +6,27 @@ body{
     padding: 0;
     background-color: helpers.$bg-color;
     font-family: helpers.$font-fam;
-   
-    
-    
+       
 }
+/*Skip to main content code snippet fra:https://www.a11y-collective.com/blog/skip-to-main-content/ */
+
+.screen-reader-text {
+    position: absolute; //Positions the link absolutely on the page, allowing it to be placed anywhere.
+    left: -9999px; //Moves the link far off-screen to the left, making it invisible to sighted users.
+    z-index: 999; //Sets a high z-index, ensuring that the link will be on top of other page elements if it becomes visible.
+    padding: 1em;
+    background-color: black;
+    color: white;
+    opacity: 0; //Sets the link's opacity to 0, making it fully transparent and invisible.
+  }
+  
+  .screen-reader-text:focus {
+    left: 50%; // When the link receives focus (e.g., when a keyboard user tabs to it), it is repositioned horizontally to the centre of the screen.
+    transform: translateX(-50%); //This centres the link horizontally by moving it back to the left by 50% of its own width.
+    opacity: 1; //The link's opacity is set to 1, making it fully visible.
+  }
+
+//   --------------------------------------------------
   
 .home-page {
     overflow: hidden;
@@ -176,11 +193,15 @@ body{
             background-color: helpers.$bg-color;
             margin-right: 2rem;
 
-            .fa-moon{
+         
+
+            i {
                 color:helpers.$accent-color;
-                font-size: 25px;
-                
+                font-size: 30px;
+                padding-right: 1rem;  
             }
+
+           
         }
     }
 
@@ -257,8 +278,14 @@ body{
         gap:1.5rem;
         padding-top: 2rem;
         align-self: center;
-        a{
-            @include helpers.btn($pad:20px 50px);  
+        // a{
+        //     // @include helpers.btn($pad:20px 50px);  
+        //     padding: 2rem 2rem;
+        // }
+
+        img{
+            height:22vh;
+            width: 12vw;
         }
    
     }
@@ -756,6 +783,30 @@ footer{
         }
 
     }
+
+ /*------- tablet og  mobile----------  */
+@media screen and (max-width:768px){
+
+
+
+
+
+
+
+
+
+
+}
+/* medium devices (lanscape tablet 768px and up) */
+@media screen and (min-width:768px) and (max-width:1300px){
+
+
+
+}
+
+
+
+
     
    
     

@@ -6,6 +6,23 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+/*Skip to main content code snippet fra:https://www.a11y-collective.com/blog/skip-to-main-content/ */
+.screen-reader-text {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: black;
+  color: white;
+  opacity: 0;
+}
+
+.screen-reader-text:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
 .home-page {
   overflow: hidden;
 }
@@ -154,9 +171,10 @@ body {
   background-color: #FBF7F4;
   margin-right: 2rem;
 }
-.nav-container button .fa-moon {
+.nav-container button i {
   color: #780710;
-  font-size: 25px;
+  font-size: 30px;
+  padding-right: 1rem;
 }
 
 .about-sec {
@@ -234,16 +252,9 @@ body {
   padding-top: 2rem;
   align-self: center;
 }
-.proskills div a {
-  border: solid 2px #780710;
-  border-radius: 20px;
-  text-align: center;
-  padding: 20px 50px;
-  text-decoration: none;
-  color: #000000;
-  background-color: transparent;
-  font-family: "Noto Sans", sans-serif;
-  font-weight: 400;
+.proskills div img {
+  height: 22vh;
+  width: 12vw;
 }
 
 .perskills {
@@ -656,4 +667,7 @@ footer ul li a:hover {
 footer .fa-square-linkedin, footer .fa-github {
   color: #FBF7F4;
   font-size: 30px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*------- tablet og  mobile----------  */
+/* medium devices (lanscape tablet 768px and up) *//*# sourceMappingURL=style.css.map */
