@@ -38,10 +38,10 @@ export class Cases {
             <a href=${this.slink}>${this.slinkName}</a>
             </div>
             <div class="img-gallery">
-            <img src="${this.image1}" alt="case image 1">
-            <img src=${this.image2} alt="case image 2">
-            <img src="${this.image3}" alt="case image 3">
-            <img src=${this.image4} alt="case image 3">
+            <img src="${this.image1}" alt="case image 1" class="scroll-animation">
+            <img src=${this.image2} alt="case image 2" class="scroll-animation">
+            <img src="${this.image3}" alt="case image 3" class="scroll-animation">
+            <img src=${this.image4} alt="case image 3" class="scroll-animation">
             </div>
 
         </section>

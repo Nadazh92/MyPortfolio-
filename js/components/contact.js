@@ -1,7 +1,7 @@
 import { Page } from './basepage.js';
 
 export class Contact extends Page {
-    constructor (title,adres,email,phone,linkedin){
+    constructor (title,phone,email,adres,linkedin){
         super(title);
         this.title=title;
         this.adres=adres;

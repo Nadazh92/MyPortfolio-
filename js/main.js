@@ -112,11 +112,12 @@ function setupContactForm() {
 
 }
 
-// ----------------------------------------------
+
+// music button function
 const music = new Audio("audio/bensound-yesterday.mp3");
 
 music.loop = true;
-music.volume = 0.1;
+music.volume = 0.08;
 music.play();
 
 function setupMusic() {
@@ -150,12 +151,35 @@ function setupMusic() {
 
     });
 }
+// scroll animation function
 
-// -----------------------------------
+function scrollAnimation() {
 
+    const sections = document.querySelectorAll("section, .scroll-animation");
 
+    const observer = new IntersectionObserver(function(entries) {
 
+        entries.forEach(function(entry) {
 
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
+            }
+
+        });
+
+    }, {
+        threshold: 0.1
+    });
+
+    sections.forEach(function(section) {
+        observer.observe(section);
+    });
+}
+
+// ------------------------------------
 document.addEventListener("DOMContentLoaded",function(){
 
 const page = new Page("Nada Zaher");
@@ -164,6 +188,7 @@ document.body.classList.add("home-page");
 document.body.innerHTML= home.getNav() + home.getContent();
 // ------------------------
 setupMusic();
+scrollAnimation();
 
 });
 
@@ -180,6 +205,7 @@ document.body.addEventListener("click",function(event){
         document.body.classList.add("home-page");
         document.body.innerHTML= home.getNav() + home.getContent();
         setupMusic();
+        scrollAnimation();
     }
 
 
@@ -192,6 +218,7 @@ document.body.addEventListener("click",function(event){
 
          document.body.innerHTML= about.render();
          setupMusic();
+         scrollAnimation();
 }
 
       if(event.target.closest("#contactPage") || event.target.closest("#about-contactme")){
@@ -199,11 +226,12 @@ document.body.addEventListener("click",function(event){
         event.preventDefault();
         document.body.classList.remove("home-page");
 
-        const contact= new Contact("Contact me", "abc", "abc","abc","My Linkedin account");
+        const contact= new Contact("Contact me", "+45 42 50 01 58", "nada.zh92@gmail.com","Pilevænget 13,st.tv 7100 Vejle","My Linkedin account");
         document.body.innerHTML = contact.getNav() + contact.getContent();
 
         setupContactForm();
         setupMusic();
+        scrollAnimation();
 
 }
 
@@ -223,6 +251,7 @@ document.body.addEventListener("click",function(event){
          const projectContent = document.querySelector("#project-content");
          projectContent.append(pro.render());
          setupMusic();
+         scrollAnimation();
 
  
 }
@@ -257,6 +286,7 @@ document.body.addEventListener("click",function(event){
           const caseContent = document.querySelector("#case-content");
           caseContent.innerHTML = ladybalanceCase.render();
           setupMusic();
+          scrollAnimation();
 
         }
 
@@ -293,6 +323,7 @@ document.body.addEventListener("click",function(event){
           const caseContent = document.querySelector("#case-content");
           caseContent.innerHTML = garnandcraftCase.render();
           setupMusic();
+         scrollAnimation();
 
         }
 
@@ -333,6 +364,7 @@ document.body.addEventListener("click",function(event){
                 const caseContent = document.querySelector("#case-content");
                 caseContent.innerHTML = garnandcraftCase.render();
                 setupMusic();
+                scrollAnimation();
 
         }
 
@@ -343,8 +375,9 @@ document.body.addEventListener("click",function(event){
                     
                     const DesignPro = new Page ("Real Life case Studies");
                     const process= new Process("Design Process");
-                    document.body.innerHTML= DesignPro.getNav() + process.render() ;
+                    document.body.innerHTML= DesignPro.getNav() + process.render() + DesignPro.getFooter();
                     setupMusic();
+                    scrollAnimation();
 }
 
 });

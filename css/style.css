@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: #FBF7F4;
   font-family: "Noto Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 /*Skip to main content code snippet fra:https://www.a11y-collective.com/blog/skip-to-main-content/ */
@@ -21,6 +22,17 @@ body {
   left: 50%;
   transform: translateX(-50%);
   opacity: 1;
+}
+
+.scroll-animation, section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-in, transform 1s ease-in;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .home-page {
@@ -588,6 +600,7 @@ body {
   justify-content: center;
   align-items: flex-direction;
   flex-direction: column;
+  gap: 0.5rem;
   background-image: url(../img/bg-Process.png);
   background-size: cover;
   -o-object-fit: fill;
@@ -600,37 +613,24 @@ body {
   border-bottom: solid 2px #780710;
   align-self: flex-start;
 }
-.process-container .process-content {
+.process-container .design-process-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 3rem;
-  margin: 0 8rem;
-  padding: 1.5rem 0;
+  gap: 0.5rem;
+  margin: 3rem 15rem;
 }
-.process-container .process-content img {
-  height: 65vh;
-  width: 25vw;
-}
-.process-container .process-content .steps {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 1rem;
-}
-.process-container .process-content .steps div {
-  border: solid 2px #B3AEAE;
-  border-radius: 10px;
-  width: 33vw;
-  padding-left: 1rem;
-}
-.process-container .process-content .steps div h2 {
+.process-container .design-process-container h2 {
   color: #780710;
+  font-size: 30px;
 }
-.process-container .process-content .steps div p {
-  font-size: 16px;
-  font-weight: 500;
+.process-container .design-process-container p {
+  font-size: 18px;
+  font-weight: 400;
+}
+.process-container .design-process-container img {
+  height: 50vh;
+  width: 30vw;
 }
 
 footer {
