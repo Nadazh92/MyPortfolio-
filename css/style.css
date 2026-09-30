@@ -150,7 +150,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 25rem;
   padding-top: 2rem;
   background-color: #FBF7F4;
 }
@@ -214,7 +213,7 @@ body {
   align-self: center;
   padding-bottom: 2rem;
 }
-.about-sec .about-container span {
+.about-sec .about-container div span {
   font-size: 30px;
   color: #780710;
   font-family: fantasy;
@@ -223,7 +222,7 @@ body {
   margin-left: 3rem;
   margin-right: 8rem;
 }
-.about-sec .about-container p {
+.about-sec .about-container div p {
   font-size: 18px;
   font-weight: 400;
   margin-left: 3rem;
@@ -231,7 +230,7 @@ body {
   padding-bottom: 3rem;
   line-height: 40px;
 }
-.about-sec .about-container a {
+.about-sec .about-container div a {
   border: solid 2px #780710;
   border-radius: 20px;
   text-align: center;
@@ -560,6 +559,7 @@ body {
 }
 .case-study .case-info p {
   font-weight: 700;
+  font-size: 18px;
 }
 .case-study span {
   font-weight: 700;
@@ -670,4 +670,235 @@ footer .fa-square-linkedin, footer .fa-github {
 }
 
 /*------- tablet og  mobile----------  */
-/* medium devices (lanscape tablet 768px and up) *//*# sourceMappingURL=style.css.map */
+@media screen and (max-width: 768px) {
+  .home-container {
+    background-image: url(../img/rose.png);
+    background-color: rgba(251, 247, 244, 0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-blend-mode: overlay;
+  }
+  .home-container p {
+    font-weight: 600;
+  }
+  .cta-home-container {
+    flex-shrink: 3;
+  }
+  .cta-home-container a {
+    border: solid 2px #780710;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px 35px;
+    text-decoration: none;
+    color: #000000;
+    background-color: transparent;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .nav-container ul {
+    display: none;
+  }
+  .project-cards div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem 0rem;
+    width: 100%;
+  }
+  .project-cards div article {
+    width: 100%;
+  }
+  .project-cards div article img {
+    height: auto;
+    width: 100%;
+  }
+  .project-cards div article div a {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .case-study {
+    margin: 1rem 0.5rem;
+    flex-shrink: 3;
+  }
+  .case-study > img {
+    height: auto;
+    width: 100%;
+  }
+  .case-study .case-info {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .case-study .img-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 2rem;
+  }
+  .case-study .img-gallery img {
+    height: auto;
+    width: 100%;
+  }
+  .process-container h1 {
+    margin: 2rem 2rem;
+  }
+  .process-container .design-process-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 3rem 1rem;
+  }
+  .process-container .design-process-container h2 {
+    font-size: 25px;
+  }
+  .process-container .design-process-container p {
+    font-weight: 500;
+  }
+  .process-container .design-process-container img {
+    width: auto;
+    height: 55vh;
+  }
+  .about-sec {
+    margin: 4rem 1rem;
+  }
+  .about-sec .about-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: auto;
+  }
+  .about-sec .about-container img {
+    height: 50vh;
+    width: 40vw;
+    align-self: center;
+  }
+  .about-sec .about-container div p {
+    font-weight: 600;
+    margin-right: auto;
+    line-height: 30px;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+  }
+  .about-sec .about-container div a {
+    border: solid 2px #780710;
+    border-radius: 20px;
+    text-align: center;
+    padding: 8px 40px;
+    text-decoration: none;
+    color: #000000;
+    background-color: transparent;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+/* medium devices (lanscape tablet 768px and up) */
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  .home-container {
+    background-image: url(../img/rose.png);
+    background-color: rgba(251, 247, 244, 0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-blend-mode: overlay;
+  }
+  .home-container p {
+    font-weight: 600;
+  }
+  .nav-container {
+    flex-shrink: 3;
+  }
+  .nav-container ul {
+    flex-shrink: 2;
+  }
+  .nav-container ul li a {
+    font-size: 20px;
+  }
+  .nav-container button {
+    flex-shrink: 2;
+    margin-right: 0.5rem;
+  }
+  .project-cards div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem 0rem;
+    width: 100%;
+  }
+  .project-cards div article {
+    width: 100%;
+  }
+  .project-cards div article img {
+    height: auto;
+    width: 100%;
+  }
+  .case-study {
+    margin: 1rem 1rem;
+    flex-shrink: 3;
+  }
+  .case-study > img {
+    height: auto;
+    width: 100%;
+  }
+  .case-study .img-gallery {
+    flex-shrink: 3;
+  }
+  .case-study .img-gallery img {
+    height: 30vh;
+    width: 20vw;
+  }
+  .process-container .design-process-container {
+    margin: 3rem 5rem;
+    flex-shrink: 3;
+  }
+  .process-container .design-process-container h2 {
+    font-size: 27px;
+  }
+  .process-container .design-process-container p {
+    font-weight: 500;
+  }
+  .process-container .design-process-container img {
+    height: 40vh;
+    width: 30vw;
+  }
+  .about-sec {
+    margin: 4rem 2rem;
+  }
+  .about-sec .about-container {
+    flex-shrink: 3;
+    margin-left: auto;
+  }
+  .about-sec .about-container img {
+    height: 50vh;
+    width: 30vw;
+    align-self: center;
+  }
+  .about-sec .about-container div p {
+    font-weight: 600;
+    margin-right: auto;
+    line-height: 30px;
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+  }
+  .about-sec .about-container div a {
+    border: solid 2px #780710;
+    border-radius: 20px;
+    text-align: center;
+    padding: 8px 40px;
+    text-decoration: none;
+    color: #000000;
+    background-color: transparent;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}/*# sourceMappingURL=style.css.map */

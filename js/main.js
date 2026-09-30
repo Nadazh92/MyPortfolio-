@@ -118,7 +118,7 @@ const music = new Audio("audio/bensound-yesterday.mp3");
 
 music.loop = true;
 music.volume = 0.08;
-music.play();
+
 
 function setupMusic() {
 

@@ -169,12 +169,12 @@ body{
 // --------------- navigation-----------------------
     .nav-container{
         @include helpers.flex($justify:space-between);
-        gap: 25rem;
+        // gap: 25rem;
         padding-top: 2rem;
         background-color: helpers.$bg-color;
 
     
-             img{
+            img{
             height:70px;
             width:70px;
             margin-left: 2rem;
@@ -250,7 +250,9 @@ body{
            
                 
         }
-        span{
+
+        div{
+            span{
             font-size: 30px;
             color:helpers.$accent-color;
             font-family: fantasy;
@@ -275,6 +277,9 @@ body{
             font-size: 18px;
             font-weight: 500;
         }
+
+        }
+        
 
        }
         
@@ -645,6 +650,7 @@ body{
 
             p{
                 font-weight: 700;
+                font-size: 18px;
             }
         }
 
@@ -790,9 +796,164 @@ footer{
  /*------- tablet og  mobile----------  */
 @media screen and (max-width:768px){
 
+.home-container{
+    
+    background-image: url(../img/rose.png);
+    background-color: rgba(251, 247, 244, 0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-blend-mode: overlay;
+
+    p{
+        font-weight: 600;
+    }
+}
+
+.cta-home-container {
+    flex-shrink: 3;
+    a{
+      @include helpers.btn($pad:10px 35px); 
+      font-size: 11px; 
+      font-weight: 700;
+    }
+}
+
+.nav-container{
+    ul{
+        display: none;
+    }
+
+}
+
+.project-cards{
+  
+div{
+   @include helpers.flex($align:center);
+   flex-direction: column;
+   margin: 2rem 0rem;
+   width: 100%;
+
+   article{
+      width: 100%;
+
+      img{
+                height: auto;
+                 width: 100%;
+               
+            }
+
+      div{
+        a{
+            font-size: 12px;
+            font-weight: 700;
+        }
+      }
+   }
+}
+
+}
+
+.case-study{
+    margin: 1rem 0.5rem;
+    flex-shrink: 3;
+
+     > img{
+            
+            height:auto;
+            width: 100%;
+}
+
+    .case-info{
+        flex-wrap: wrap;
+        gap: 1rem;
+      
+}
+
+     .img-gallery{
+        @include helpers.flex($align:center);
+        flex-direction: column;
+        margin: 0 2rem;
+
+        img{
+            height:auto;
+            width: 100%;
 
 
+        }
+    }
 
+}
+
+.process-container{
+
+    h1{
+        margin: 2rem 2rem;
+    }
+
+    .design-process-container{
+
+        @include helpers.flex($align:flex-start);
+        flex-direction: column;
+       
+        margin: 3rem 1rem;
+        
+
+        h2{
+            font-size: 25px;
+        }
+
+        p{
+            font-weight: 500;
+           
+        }
+
+        img{
+            width:auto;
+            height:55vh;
+            
+        }
+        
+    }
+}
+
+.about-sec{
+    margin: 4rem 1rem;
+
+    .about-container{
+       @include helpers.flex($align:flex-start);
+       flex-direction: column;
+       margin-left: auto;
+
+
+        img{
+            height:50vh;
+            width: 40vw;
+            align-self: center;            
+        }
+
+       div{
+        p{
+            font-weight: 600;
+            margin-right: auto;
+            line-height: 30px;
+            padding-bottom: 1rem;
+            margin-bottom: 0;
+            
+        }
+
+        a{
+            @include helpers.btn($pad:8px 40px);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+       }
+         
+
+    }
+
+}
 
 
 
@@ -805,11 +966,144 @@ footer{
 
 
 
+.home-container{
+    
+    background-image: url(../img/rose.png);
+    background-color: rgba(251, 247, 244, 0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-blend-mode: overlay;
+
+     p{
+        font-weight: 600;
+    }
+
 }
 
+.nav-container{
+    flex-shrink: 3;
+   
+    ul {
+        flex-shrink: 2;
+
+        li{
+            a{
+                font-size: 20px;
+            }
+        }
+    }
+
+    button{
+        flex-shrink: 2;
+        margin-right: 0.5rem;
+    }
+
+}
+
+.project-cards{
+  
+div{
+   @include helpers.flex($align:center);
+   flex-direction: column;
+   margin: 2rem 0rem;
+   width: 100%;
+
+   article{
+      width: 100%;
+
+      img{
+                height: auto;
+                 width: 100%;
+               
+            }
+   }
+}
+
+}
+
+.case-study{
+    margin: 1rem 1rem;
+    flex-shrink: 3;
+
+     > img{
+            
+            height:auto;
+            width: 100%;
+}
+
+    .img-gallery{
+        flex-shrink: 3;
+        
+        img{
+            height: 30vh;
+            width: 20vw;
+
+        }
+    }
+   
+}
+
+.process-container{
+
+    .design-process-container{
+        margin: 3rem 5rem;
+        flex-shrink: 3;
+
+        h2{
+            font-size: 27px;
+        }
+
+        p{
+            font-weight: 500;
+           
+        }
+        
+        img{
+            height:40vh;
+            width: 30vw;
+
+        }
+
+    }
+}
+
+.about-sec{
+    margin: 4rem 2rem;
+
+    .about-container{
+        flex-shrink: 3;
+        margin-left: auto;
 
 
+        img{
+            height:50vh;
+            width: 30vw;
+            align-self: center;            
+        }
+        div{
+             p{
+            font-weight: 600;
+            margin-right: auto;
+            line-height: 30px;
+            margin-bottom: 0;
+            padding-bottom: 2rem;
+        }
 
+        a{
+            @include helpers.btn($pad:8px 40px);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+
+        }
+        
+    }
+
+}
+
+}
     
    
     

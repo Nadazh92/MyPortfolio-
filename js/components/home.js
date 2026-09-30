@@ -16,9 +16,7 @@ export class Home extends Page {
         
         return`
         <section class="home-container">
-        
-            
-            
+     
         <div class="main-content">
             <div class="namerolle">
             <h1>${this.title}</h1>
