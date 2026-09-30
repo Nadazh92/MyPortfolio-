@@ -213,21 +213,24 @@ body {
   align-self: center;
   padding-bottom: 2rem;
 }
+.about-sec .about-container div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0;
+}
 .about-sec .about-container div span {
   font-size: 30px;
   color: #780710;
   font-family: fantasy;
-  align-self: center;
-  padding-bottom: 2rem;
   margin-left: 3rem;
-  margin-right: 8rem;
 }
 .about-sec .about-container div p {
   font-size: 18px;
   font-weight: 400;
   margin-left: 3rem;
   margin-right: 8rem;
-  padding-bottom: 3rem;
   line-height: 40px;
 }
 .about-sec .about-container div a {
@@ -243,6 +246,14 @@ body {
   margin-left: 3rem;
   font-size: 18px;
   font-weight: 500;
+  margin-bottom: 2rem;
+}
+.about-sec .about-container div a:hover {
+  background-color: rgb(10, 96, 10);
+  border: none;
+  font-weight: 600;
+  color: #FBF7F4;
+  transition: 0.3s ease-in;
 }
 
 .proskills {
@@ -379,8 +390,6 @@ body {
   height: 55vh;
   width: 30vw;
   padding: 2rem 4rem;
-  background-image: url(../img/bg-contact-img.png);
-  background-size: cover;
 }
 .contact-me .contact-container .contact-form form div {
   display: flex;
@@ -771,19 +780,24 @@ footer .fa-square-linkedin, footer .fa-github {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    margin-left: auto;
+    margin: 2rem 1rem;
   }
   .about-sec .about-container img {
     height: 50vh;
-    width: 40vw;
+    width: 45vw;
     align-self: center;
+  }
+  .about-sec .about-container div {
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .about-sec .about-container div span {
+    margin-left: 0.5rem;
   }
   .about-sec .about-container div p {
     font-weight: 600;
     margin-right: auto;
     line-height: 30px;
-    padding-bottom: 1rem;
-    margin-bottom: 0;
   }
   .about-sec .about-container div a {
     border: solid 2px #780710;
@@ -797,6 +811,109 @@ footer .fa-square-linkedin, footer .fa-github {
     font-weight: 400;
     font-size: 18px;
     font-weight: 600;
+    margin-left: 0;
+  }
+  .proskills h2 {
+    margin-left: 1rem;
+  }
+  .proskills div {
+    flex-wrap: wrap;
+  }
+  .proskills div img {
+    height: 15vh;
+    width: 20vw;
+  }
+  .perskills h2 {
+    margin-left: 1rem;
+  }
+  .perskills img {
+    height: 50vh;
+    width: 100%;
+    margin-left: 0.5rem;
+  }
+  .lang {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .lang h2 {
+    margin-left: 1.5rem;
+  }
+  .lang ul {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .lang ul li {
+    font-weight: 600;
+  }
+  .volun {
+    margin-left: 1rem;
+    margin-right: auto;
+  }
+  .volun p {
+    font-weight: 500;
+  }
+  .contact-me {
+    margin: 2rem 1rem;
+  }
+  .contact-me .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+  .contact-me .contact-container .getintouch {
+    width: 100%;
+    padding: 0 0;
+    text-align: center;
+    padding-top: 3rem;
+  }
+  .contact-me .contact-container .contact-form {
+    width: 100%;
+    margin: 1rem 0.5rem;
+    padding: 0 0;
+  }
+  .contact-me .contact-container .contact-form form div {
+    margin-left: 0.5rem;
+  }
+  .contact-me .contact-container .contact-form form div input {
+    width: 90%;
+  }
+  .contact-me .contact-container .contact-form form div textarea {
+    width: 90%;
+  }
+  .contact-me .contact-container .contact-form form div button {
+    width: 90%;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 20vh;
+    padding: 2rem 0;
+  }
+  footer img {
+    height: 15vh;
+    width: auto;
+  }
+  footer ul {
+    margin-left: 0;
+  }
+  footer ul li a {
+    font-size: 20px;
+  }
+  footer ul li a:hover {
+    font-size: 24px;
+  }
+  footer .fa-square-linkedin, footer .fa-github {
+    font-size: 25px;
   }
 }
 /* medium devices (lanscape tablet 768px and up) */
@@ -885,8 +1002,6 @@ footer .fa-square-linkedin, footer .fa-github {
     font-weight: 600;
     margin-right: auto;
     line-height: 30px;
-    margin-bottom: 0;
-    padding-bottom: 2rem;
   }
   .about-sec .about-container div a {
     border: solid 2px #780710;
@@ -900,5 +1015,53 @@ footer .fa-square-linkedin, footer .fa-github {
     font-weight: 400;
     font-size: 18px;
     font-weight: 600;
+  }
+  .proskills h2 {
+    margin-left: 2rem;
+  }
+  .proskills div {
+    flex-wrap: wrap;
+  }
+  .proskills div img {
+    height: 27vh;
+    width: 18vw;
+  }
+  .perskills h2 {
+    margin-left: 2rem;
+  }
+  .perskills img {
+    height: 50vh;
+    width: 70vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .lang h2 {
+    margin-left: 2rem;
+  }
+  .lang ul {
+    gap: 7rem;
+  }
+  .lang ul li {
+    font-weight: 6500;
+  }
+  .volun {
+    margin-left: 2rem;
+    margin-right: auto;
+  }
+  .volun p {
+    font-weight: 500;
+  }
+  footer {
+    flex-shrink: 3;
+  }
+  footer img {
+    height: 8vh;
+    width: 10vw;
+  }
+  footer ul {
+    gap: 15px;
+  }
+  footer ul li a {
+    font-size: 20px;
   }
 }/*# sourceMappingURL=style.css.map */

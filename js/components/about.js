@@ -18,7 +18,7 @@ export class About extends Page{
     <div>
     <span> Hey Iam Nada </span>
     <p>${this.para1} <br> ${this.para2}</p>
-     <a href="#" id="about-contactme">Contact me</a>
+     <a href="#" id="about-contactme">Contact me <i class="fa-regular fa-envelope"></i></a>
     </div>
     </div>
     </section>

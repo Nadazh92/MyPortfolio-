@@ -27,7 +27,7 @@ body{
     opacity: 1; //The link's opacity is set to 1, making it fully visible.
   }
 
-//   --------------------------------------------------
+// --------------------------------------------------
 .scroll-animation, section {
     opacity: 0;
     transform: translateY(50px);
@@ -39,10 +39,7 @@ body{
     transform: translateY(0);
 }
 
-
-
-
-// ---------------------------------
+// ----------------------------------------------------
   
 .home-page {
     overflow: hidden;
@@ -222,9 +219,8 @@ body{
     }
 
 
-    // ----------------about page------------------ 
+// ----------------about page------------------ 
 
-    // about me page ----------
 
     .about-sec{
         @include helpers.flex($align:flex-start);
@@ -252,14 +248,14 @@ body{
         }
 
         div{
-            span{
+            @include helpers.flex($align:flex-start);
+            flex-direction: column;
+            gap:0;
+        span{
             font-size: 30px;
             color:helpers.$accent-color;
             font-family: fantasy;
-            align-self: center;
-            padding-bottom: 2rem;
             margin-left: 3rem;
-            margin-right: 8rem;
         }
 
         p{
@@ -267,7 +263,6 @@ body{
             font-weight: 400;
             margin-left: 3rem;
             margin-right: 8rem;
-            padding-bottom: 3rem;
             line-height: 40px;
         }
 
@@ -276,6 +271,17 @@ body{
             margin-left: 3rem;
             font-size: 18px;
             font-weight: 500;
+            margin-bottom: 2rem;
+
+        
+
+            &:hover{
+                background-color: rgb(10, 96, 10);
+                border: none;
+                font-weight: 600;
+                color:helpers.$bg-color;
+                transition: 0.3s ease-in;
+            }
         }
 
         }
@@ -446,8 +452,7 @@ body{
             height: 55vh;
             width: 30vw;
             padding: 2rem 4rem;
-            background-image: url(../img/bg-contact-img.png);
-            background-size: cover;
+            
 
 
             form{
@@ -742,9 +747,7 @@ body{
 
         
 
-    
-
-       
+     
 footer{
     
     @include helpers.flex($justify:space-between);
@@ -923,29 +926,35 @@ div{
     .about-container{
        @include helpers.flex($align:flex-start);
        flex-direction: column;
-       margin-left: auto;
+        margin: 2rem 1rem;
 
 
         img{
             height:50vh;
-            width: 40vw;
+            width: 45vw;
             align-self: center;            
         }
 
        div{
+        align-items: center;
+         flex-wrap: wrap;
+
+         span{
+           margin-left: 0.5rem;
+            
+         }
         p{
             font-weight: 600;
             margin-right: auto;
-            line-height: 30px;
-            padding-bottom: 1rem;
-            margin-bottom: 0;
-            
+            line-height: 30px;  
         }
 
         a{
             @include helpers.btn($pad:8px 40px);
             font-size: 18px;
             font-weight: 600;
+            margin-left: 0;
+            
         }
 
        }
@@ -955,12 +964,153 @@ div{
 
 }
 
+.proskills{
+
+    h2{
+        margin-left: 1rem;
+    }
+
+    div{
+        flex-wrap: wrap;
+
+         img{
+            height:15vh;
+            width: 20vw;
+            
+        }
+    }
+}
+.perskills{
+
+    h2{
+        margin-left: 1rem;
+    }
+
+    img{
+        height:50vh;
+        width:100%;
+        margin-left: 0.5rem;
+        
+    }
+
+}
+
+.lang{
+     
+       @include helpers.flex($align:flex-start);
+        flex-direction: column;
+
+        h2{
+            margin-left: 1.5rem;
+        }
+
+        ul{
+            @include helpers.flex($align:flex-start);
+            flex-direction: column;
+            gap: 1rem;
+
+            li{
+                font-weight:600;
+            }   
+        }
+
+    }
+.volun{
+        
+         margin-left:1rem;
+         margin-right: auto;
+         
+         p{
+            font-weight: 500;
+            
+        }
+
+
+    }
+.contact-me{
+    margin: 2rem 1rem;
+     .contact-container{
+        @include helpers.flex($align:flex-start);
+        flex-direction: column;
+        width: 100%;
+
+        .getintouch{
+            width: 100%;
+            padding: 0 0;
+            text-align: center;
+            padding-top: 3rem;
+        }
+
+       .contact-form{
+        width: 100%;
+        margin: 1rem 0.5rem;
+        padding: 0 0;
+
+        form{
+
+            div{
+                margin-left: 0.5rem;
+                input{
+                    width:90%;
+                }
+
+                textarea{
+                    width:90%;
+                }
+
+                button{
+                    width:90%;
+                  
+                }
+            }
+           
+            }
+           
+        }
+       }
+     }
 
 
 
+
+
+footer{
+    
+    @include helpers.flex($align:center);
+    flex-direction: column;
+    gap:10px;
+    min-height: 20vh;
+    padding: 2rem 0;
+    
+    img{
+        height:15vh;
+        width:auto;
+    }
+
+    ul{
+        margin-left: 0;   
+            li {
+            
+              a{
+               font-size: 20px;
+
+               &:hover{
+                font-size: 24px; }
+     
+           }
+           }
+           }
+
+        .fa-square-linkedin, .fa-github{
+            font-size: 25px;
+
+           
+        }
+    }
 
 
 }
+
 /* medium devices (lanscape tablet 768px and up) */
 @media screen and (min-width:768px) and (max-width:1300px){
 
@@ -1086,8 +1236,6 @@ div{
             font-weight: 600;
             margin-right: auto;
             line-height: 30px;
-            margin-bottom: 0;
-            padding-bottom: 2rem;
         }
 
         a{
@@ -1103,8 +1251,93 @@ div{
 
 }
 
+.proskills{
+
+    h2{
+        margin-left: 2rem;
+    }
+
+    div{
+        flex-wrap: wrap;
+
+         img{
+            height:27vh;
+            width: 18vw;
+            
+        }
+    }
 }
+
+.perskills{
+
+    h2{
+        margin-left: 2rem;
+    }
+
+    img{
+        height:50vh;
+        width: 70vw;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+}
+
+.lang{
     
+        h2{
+            margin-left: 2rem;
+        }
+
+        ul{
+            gap: 7rem;
+
+            li{
+                font-weight:6500;
+            }   
+        }
+
+    }
+
+.volun{
+        
+         margin-left:2rem;
+         margin-right: auto;
+         
+         p{
+            font-weight: 500;
+            
+        }
+
+
+    }
+
+footer{
+    
+   flex-shrink: 3;
+    
+    img{
+        height:8vh;
+        width:10vw;
+    }
+
+
+    ul{
+           gap:15px;
+
+           li{
+            a{
+                font-size: 20px;
+            }
+           }
+         
+           }
+    }
+
+}
+
+
+
    
     
 
