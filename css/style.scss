@@ -40,6 +40,8 @@ body{
 }
 
 // ----------------------------------------------------
+
+
   
 .home-page {
     overflow: hidden;
@@ -214,8 +216,11 @@ body{
                 padding-right: 1rem;  
             }
 
-           
         }
+
+         #btn-hamenu{
+                display: none;
+              }
     }
 
 
@@ -799,6 +804,8 @@ footer{
  /*------- tablet og  mobile----------  */
 @media screen and (max-width:768px){
 
+
+
 .home-container{
     
     background-image: url(../img/rose.png);
@@ -825,8 +832,45 @@ footer{
 .nav-container{
     ul{
         display: none;
+       
+
+     &.show-menu{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: absolute;
+        top: 6rem;
+        color: helpers.$bg-color;
+        width: 100%;
+        background-color: helpers.$accent-color;
+        z-index: 2;
+        padding: 2rem 2rem;
+       
     }
 
+    li {
+        a{
+        color:helpers.$bg-color;
+        font-size: 20px;
+
+        &:hover{
+            border-bottom: 1px solid helpers.$bg-color;
+            font-size: 22px;
+            color:helpers.$bg-color;
+        }
+           
+    }}
+}
+    
+    #btn-hamenu{
+    display: block;
+    margin-right: 0;
+    padding-right: 0;
+}
+    #btn-music{
+    display:none;
+}
 }
 
 .project-cards{
@@ -1069,9 +1113,6 @@ div{
         }
        }
      }
-
-
-
 
 
 footer{

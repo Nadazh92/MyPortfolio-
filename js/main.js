@@ -118,8 +118,6 @@ const music = new Audio("audio/bensound-yesterday.mp3");
 
 music.loop = true;
 music.volume = 0.08;
-
-
 function setupMusic() {
 
     const musicBtn = document.querySelector("#btn-music");
@@ -151,6 +149,7 @@ function setupMusic() {
 
     });
 }
+
 // scroll animation function
 
 function scrollAnimation() {
@@ -179,6 +178,22 @@ function scrollAnimation() {
     });
 }
 
+
+// hamburgerMenu button function 
+
+function hamburgerMenu(){
+const haMenu = document.querySelector("#btn-hamenu");
+const menu = document.querySelector(".nav-container ul");
+const icon= haMenu.querySelector("i");
+
+haMenu.addEventListener("click", function (){
+menu.classList.toggle("show-menu");
+icon.classList.toggle("fa-bars-staggered");
+icon.classList.toggle("fa-xmark");
+
+})
+}
+
 // ------------------------------------
 document.addEventListener("DOMContentLoaded",function(){
 
@@ -189,6 +204,7 @@ document.body.innerHTML= home.getNav() + home.getContent();
 // ------------------------
 setupMusic();
 scrollAnimation();
+hamburgerMenu();
 
 });
 
@@ -206,6 +222,7 @@ document.body.addEventListener("click",function(event){
         document.body.innerHTML= home.getNav() + home.getContent();
         setupMusic();
         scrollAnimation();
+        hamburgerMenu();
     }
 
 
@@ -219,6 +236,7 @@ document.body.addEventListener("click",function(event){
          document.body.innerHTML= about.render();
          setupMusic();
          scrollAnimation();
+         hamburgerMenu();
 }
 
       if(event.target.closest("#contactPage") || event.target.closest("#about-contactme")){
@@ -226,12 +244,13 @@ document.body.addEventListener("click",function(event){
         event.preventDefault();
         document.body.classList.remove("home-page");
 
-        const contact= new Contact("Contact me", "+45 42 50 01 58", "nada.zh92@gmail.com","Pilevænget 13,st.tv 7100 Vejle","My Linkedin account");
+        const contact= new Contact("Contact me", "+45 ", "nada","Pil","My Linkedin account");
         document.body.innerHTML = contact.getNav() + contact.getContent();
 
         setupContactForm();
         setupMusic();
         scrollAnimation();
+        hamburgerMenu();
 
 }
 
@@ -252,6 +271,7 @@ document.body.addEventListener("click",function(event){
          projectContent.append(pro.render());
          setupMusic();
          scrollAnimation();
+         hamburgerMenu();
 
  
 }
@@ -287,6 +307,7 @@ document.body.addEventListener("click",function(event){
           caseContent.innerHTML = ladybalanceCase.render();
           setupMusic();
           scrollAnimation();
+          hamburgerMenu();
 
         }
 
@@ -324,6 +345,8 @@ document.body.addEventListener("click",function(event){
           caseContent.innerHTML = garnandcraftCase.render();
           setupMusic();
          scrollAnimation();
+         hamburgerMenu();
+
 
         }
 
@@ -365,6 +388,7 @@ document.body.addEventListener("click",function(event){
                 caseContent.innerHTML = garnandcraftCase.render();
                 setupMusic();
                 scrollAnimation();
+                hamburgerMenu();
 
         }
 
@@ -378,6 +402,7 @@ document.body.addEventListener("click",function(event){
                     document.body.innerHTML= DesignPro.getNav() + process.render() + DesignPro.getFooter();
                     setupMusic();
                     scrollAnimation();
+                    hamburgerMenu();
 }
 
 });

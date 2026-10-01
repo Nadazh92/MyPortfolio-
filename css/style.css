@@ -187,6 +187,9 @@ body {
   font-size: 30px;
   padding-right: 1rem;
 }
+.nav-container #btn-hamenu {
+  display: none;
+}
 
 .about-sec {
   display: flex;
@@ -708,6 +711,35 @@ footer .fa-square-linkedin, footer .fa-github {
     font-weight: 700;
   }
   .nav-container ul {
+    display: none;
+  }
+  .nav-container ul.show-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 6rem;
+    color: #FBF7F4;
+    width: 100%;
+    background-color: #780710;
+    z-index: 2;
+    padding: 2rem 2rem;
+  }
+  .nav-container ul li a {
+    color: #FBF7F4;
+    font-size: 20px;
+  }
+  .nav-container ul li a:hover {
+    border-bottom: 1px solid #FBF7F4;
+    font-size: 22px;
+    color: #FBF7F4;
+  }
+  .nav-container #btn-hamenu {
+    display: block;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .nav-container #btn-music {
     display: none;
   }
   .project-cards div {

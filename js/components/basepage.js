@@ -21,8 +21,9 @@ export class Page{
                 <li><a href="#" id="aboutPage">About</a></li>
                <li><a href="#" id="contactPage">Contact</a></li>
             </ul>
-
+            <button id="btn-hamenu" aria-label="hamburger menu"><i class="fa-solid fa-bars-staggered"></i></button>
             <button id="btn-music" aria-label="play background music"><i class="fa-solid fa-music"></i></button>
+            
             
         
         </nav>
