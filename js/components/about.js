@@ -45,7 +45,7 @@ export class About extends Page{
     <h2>Languages</h2>
      <ul>
         <li>Arabic: Native</li>
-        <li>Danish: Very good</li>
+        <li>Danish:  Good</li>
         <li>English: Good</li>
      </ul>
      </section>

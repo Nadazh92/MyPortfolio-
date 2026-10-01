@@ -30,10 +30,6 @@ $font-fam: "Noto Sans", sans-serif;
 
 }
 
-@mixin para($color:$txt-color, $size:25px, $hline:1.2){
-    color:$color;
-    font-size: $size;
-    line-height: $hline;
-}
+
 
 

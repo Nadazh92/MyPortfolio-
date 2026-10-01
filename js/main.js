@@ -244,7 +244,7 @@ document.body.addEventListener("click",function(event){
         event.preventDefault();
         document.body.classList.remove("home-page");
 
-        const contact= new Contact("Contact me", "+45 ", "nada","Pil","My Linkedin account");
+        const contact= new Contact("Contact me", "+45 42 50 01 58 ", "nada.zh92@gmail.com","Danmark, Vejle 7100","My Linkedin account");
         document.body.innerHTML = contact.getNav() + contact.getContent();
 
         setupContactForm();

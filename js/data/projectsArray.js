@@ -22,7 +22,7 @@ export  const projects = [
                  "#",
                  "read-more-gg",
                  "Live Website", 
-                 "http://nadazh.dk/LB/", 
+                 "http://nadazh.dk/garnogcraft/", 
                  "Source Code", 
                  "https://github.com/Nadazh92/GarnogCraft"
                 ),
