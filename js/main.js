@@ -357,7 +357,7 @@ document.body.addEventListener("click",function(event){
                 document.body.classList.remove("home-page");
                 const ggCase = new Page ("Garn and Craft case study");
 
-                const garnandcraftCase = new Cases("img/PlayBook.png",
+                const garnandcraftCase = new Cases("img/Playbook.png",
                 " GLS",
                 " 2026",
                 " 18 days",
